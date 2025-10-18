@@ -2,7 +2,7 @@
 
 Welcome to my **personal portfolio website**, showcasing my work in **DevOps, Cloud, Linux, Python, and Automation**. This repository hosts the source code for my interactive terminal-style web page.
 
-![Portfolio Screenshot](./10.png)
+![10.png](./10.png)
 
 ---
 
