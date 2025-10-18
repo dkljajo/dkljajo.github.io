@@ -2,7 +2,7 @@
 
 Welcome to my **personal portfolio website**, showcasing my work in **DevOps, Cloud, Linux, Python, and Automation**. This repository hosts the source code for my interactive terminal-style web page.
 
-![Portfolio Screenshot](images/project1.png)
+![Portfolio Screenshot](./10.png)
 
 ---
 
@@ -21,7 +21,7 @@ I began my career as a manager and deputy director in a family-owned manufacturi
 
 ## 🌐 Portfolio Website
 
-Check out my live portfolio: [https://staticfile-d4v1d.wasmer.app/](https://staticfile-d4v1d.wasmer.app/)
+Check out my live portfolio: [davidkljajo.dev)
 
 The website features:
 
