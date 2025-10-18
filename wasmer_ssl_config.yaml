@@ -1,6 +1,0 @@
-version: v1
-site:
-  name: hacker-terminal
-  root: ./
-  domain: yourcustomdomain.com  # optional: leave blank for free Wasmer subdomain
-  ssl: true  # enables automatic HTTPS via Let's Encrypt
