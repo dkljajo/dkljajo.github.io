@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>D4v1d Klj4j0 — Hacker Terminal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Portfolio of D4v1d Klj4j0 — DevOps, Linux, Python, AWS, and Cloud Automation projects" />
+<title>D4v1d Klj4j0 — Portfolio</title>
 <style>
 :root{
   --bg:#080808;
@@ -12,17 +13,17 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;padding:3rem;background:var(--bg);color:var(--green);font-family:var(--mono);display:flex;align-items:center;justify-content:center;}
-.frame{width:100%;max-width:1100px;display:grid;grid-template-columns:360px 1fr;min-height:560px;background:rgba(0,0,0,0.05);border-radius:12px;overflow:hidden;}
-.sidebar{padding:28px;display:flex;flex-direction:column;gap:18px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(57,255,20,0.1);}
+.frame{width:100%;max-width:1100px;display:grid;grid-template-columns:300px 1fr;min-height:560px;background:rgba(0,0,0,0.05);border-radius:12px;overflow:hidden;}
+.sidebar{padding:28px;display:flex;flex-direction:column;gap:18px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(57,255,20,0.1);position:sticky;top:0;height:100vh;}
 .logo{display:flex;gap:12px;align-items:center;}
 .dot{width:14px;height:14px;border-radius:50%;background:var(--green);}
 .title{font-weight:700;font-size:18px;letter-spacing:0.6px}
 .subtitle{font-size:11px;color:rgba(57,255,20,0.55);margin-top:-4px}
 .nav{display:flex;flex-direction:column;gap:8px;}
-.nav a{display:block;padding:10px 12px;border-radius:6px;color:var(--green);text-decoration:none;font-size:13px;border:1px solid rgba(57,255,20,0.03)}
+.nav a{display:block;padding:10px 12px;border-radius:6px;color:var(--green);text-decoration:none;font-size:13px;border:1px solid rgba(57,255,20,0.03);transition:0.2s;}
 .nav a:hover{background:rgba(57,255,20,0.04)}
-.terminal-wrap{padding:28px;background:rgba(0,0,0,0.3);position:relative;overflow:hidden;}
-.term{margin-top:40px;padding:24px;border-radius:8px;background:rgba(0,0,0,0.15);min-height:420px;overflow:auto;border:1px solid rgba(57,255,20,0.04);position:relative;}
+.terminal-wrap{padding:28px;background:rgba(0,0,0,0.3);position:relative;overflow:hidden;flex:1;}
+.term{margin-top:20px;padding:24px;border-radius:8px;background:rgba(0,0,0,0.15);min-height:420px;overflow:auto;border:1px solid rgba(57,255,20,0.04);position:relative;}
 .cursor{display:inline-block;width:8px;height:18px;background:var(--green);margin-left:6px;vertical-align:middle;animation:blink 1s steps(2) infinite;}
 @keyframes blink{50%{opacity:0}}
 .matrix{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0.25;font-family:var(--mono);color:var(--green);font-size:12px;white-space:nowrap;}
@@ -32,14 +33,13 @@ html,body{height:100%;margin:0;padding:3rem;background:var(--bg);color:var(--gre
 .button{display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid var(--green);border-radius:4px;color:var(--green);text-decoration:none;font-size:13px;transition:0.2s;}
 .button:hover{background:rgba(57,255,20,0.1);}
 .project-link{display:block;margin:4px 0;color:var(--green);text-decoration:underline;}
+img{max-width:100%;border-radius:6px;}
 </style>
 </head>
 <body>
-  <h1>Live Server Preview</h1>
 <div class="frame">
   <div class="sidebar">
     <div class="logo"><div class="dot"></div><div><div class="title">D4v1d Klj4j0</div><div class="subtitle">dev • tinkerer • writer</div></div></div>
-    <img src="photo.jpg" alt="D4v1d Klj4j0" style="width:80px;height:80px;border-radius:50%;border:2px solid var(--green);margin:10px 0;">
     <nav class="nav">
       <a href="#home" data-nav>Home</a>
       <a href="#repos" data-nav>Repositories</a>
@@ -51,7 +51,7 @@ html,body{height:100%;margin:0;padding:3rem;background:var(--bg);color:var(--gre
     <div class="matrix" id="matrix"></div>
     <div class="term" id="term">
       <div id="page-home" class="page">
-        <div class="panel"><div class="line"><strong>Welcome to my hacker terminal</strong></div></div>
+        <div class="panel"><div class="line"><strong>Welcome to my hacker terminal portfolio</strong></div></div>
       </div>
       <div id="page-repos" class="page" style="display:none">
         <div class="panel"><div class="line"><strong>Repositories</strong></div></div>
@@ -93,19 +93,17 @@ html,body{height:100%;margin:0;padding:3rem;background:var(--bg);color:var(--gre
   </div>
 </div>
 <script>
-// LIVE SERVER READY SETUP
-// 1. Save this file as index.html
-// 2. Right-click inside VS Code → Open with Live Server
-
+// Navigation
 function showPage(name){
   const pages = document.querySelectorAll('.page');
-  pages.forEach(function(p){ p.style.display='none'; });
+  pages.forEach(p => p.style.display='none');
   const page = document.getElementById('page-'+name);
-  if(page){ page.style.display='block'; }
+  if(page) page.style.display='block';
 }
-window.addEventListener('hashchange',()=>{showPage(location.hash.replace('#','')||'home');});
-window.addEventListener('load',()=>{showPage(location.hash.replace('#','')||'home');});
+window.addEventListener('hashchange',()=>showPage(location.hash.replace('#','')||'home'));
+window.addEventListener('load',()=>showPage(location.hash.replace('#','')||'home'));
 
+// Load GitHub repos
 async function loadRepos(){
   const reposList = document.getElementById('repos-list');
   try {
@@ -118,17 +116,16 @@ async function loadRepos(){
       div.innerHTML = `<strong>${repo.name}</strong>: ${repo.description || 'No description'}`;
       reposList.appendChild(div);
     });
-  } catch (e){
-    reposList.innerHTML = '<div class="line">Failed to load repositories.</div>';
-  }
+  } catch(e){ reposList.innerHTML='<div class="line">Failed to load repositories.</div>'; }
 }
 loadRepos();
 
+// Matrix animation
 const matrix=document.getElementById('matrix');
 const commands=['sudo apt update','nmap -v 192.168.1.1','ssh user@server','tail -f /var/log/syslog','git clone https://github.com/user/repo','python3 exploit.py','cat /etc/passwd','docker ps -a','terraform apply','ansible-playbook site.yml','rm -rf /tmp/*','iptables -L'];
 function spawnColumn(x){
   const el=document.createElement('div');
-  el.className='col';
+  el.style.position='absolute';
   el.style.left=x+'px';
   el.style.fontSize=(8+Math.random()*8)+'px';
   el.style.opacity=(0.2+Math.random()*0.6);
@@ -139,15 +136,14 @@ function spawnColumn(x){
     height++;
     let s='';
     for(let i=0;i<Math.min(height,max);i++){
-      if(Math.random()<0.3){ s += Math.random()<0.5 ? '0' : '1'; } 
-      else { s += commands[Math.floor(Math.random()*commands.length)] + ' '; }
+      s += Math.random()<0.3 ? (Math.random()<0.5?'0':'1')+' ' : commands[Math.floor(Math.random()*commands.length)]+' ';
     }
     el.textContent = s;
     el.style.transform = 'translateY(' + (height*14) + 'px)';
     if(height>max){ clearInterval(id); el.remove(); }
   },40+Math.random()*40);
 }
-setInterval(function(){ spawnColumn(Math.random()*(matrix.clientWidth-20)); },150);
+setInterval(()=>spawnColumn(Math.random()*(matrix.clientWidth-20)),150);
 </script>
 </body>
 </html>
