@@ -3,22 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="David Kljajo - Senior DevOps Engineer specializing in AWS, Docker, Kubernetes, Python automation, Linux systems, and cloud infrastructure. View my portfolio of enterprise projects and GitHub repositories." />
+<meta name="description" content="David Kljajo - DevOps Engineer specializing in AWS, GCP, Docker, Kubernetes, Python automation, Linux systems, and cloud infrastructure. View my portfolio of enterprise projects and GitHub repositories." />
 <meta name="keywords" content="David Kljajo, DevOps Engineer, AWS Certified, Docker, Kubernetes, Python Developer, Linux Administrator, Cloud Infrastructure, Terraform, Ansible, CI/CD, System Administrator, Site Reliability Engineer, Infrastructure as Code, Container Orchestration, Microservices, Cloud Migration, AWS Solutions Architect" />
 <meta name="author" content="David Kljajo" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://dkljajo.github.io/" />
-<title>David Kljajo - Senior DevOps Engineer | AWS, Docker, Kubernetes Expert | Portfolio</title>
+<title>David Kljajo - DevOps Engineer | AWS, Docker, Kubernetes Expert | Portfolio</title>
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="David Kljajo - Senior DevOps Engineer | AWS Expert" />
-<meta property="og:description" content="Experienced DevOps Engineer with expertise in AWS cloud architecture, Docker containerization, Kubernetes orchestration, and Python automation." />
+<meta property="og:title" content="David Kljajo -  DevOps Engineer | AWS " />
+<meta property="og:description" content=" DevOps Engineer with expertise in AWS cloud architecture, Docker containerization, Kubernetes orchestration, and Python automation." />
 <meta property="og:image" content="https://dkljajo.github.io/photo.jpg" />
 <meta property="og:url" content="https://dkljajo.github.io/" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="David Kljajo - DevOps Engineer | AWS Expert" />
-<meta name="twitter:description" content="DevOps Engineer specializing in AWS, Docker, Kubernetes, Python. View my enterprise projects." />
+<meta name="twitter:title" content="David Kljajo - DevOps Engineer | AWS" />
+<meta name="twitter:description" content="DevOps Engineer specializing in AWS, GCP, Docker, Kubernetes, Python. View my enterprise projects." />
 
 <!-- Structured Data -->
 <script type="application/ld+json">
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "David Kljajo",
-  "jobTitle": "Senior DevOps Engineer",
+  "jobTitle": " DevOps Engineer",
   "description": "DevOps Engineer specializing in AWS, Docker, Kubernetes, Python automation",
   "url": "https://dkljajo.github.io",
   "sameAs": [
@@ -48,14 +48,14 @@
   --mono:"Fira Mono","Source Code Pro",monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;background:var(--bg-dark);color:var(--text-dark);font-family:var(--mono);display:flex;align-items:center;justify-content:center;}
+html,body{min-height:100vh;background:var(--bg-dark);color:var(--text-dark);font-family:var(--mono);margin:0;padding:0;}
 a{color:var(--text-dark);text-decoration:none;transition:0.2s;}
 a:hover{text-decoration:underline;}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
 .skip-link:focus{position:static;width:auto;height:auto;left:0;background:#111;padding:8px;border-radius:4px;}
 :focus{outline:2px dashed rgba(57,255,20,0.9);outline-offset:3px;}
-.frame{width:100%;max-width:1100px;display:grid;grid-template-columns:300px 1fr;min-height:560px;background:rgba(0,0,0,0.05);border-radius:12px;overflow:hidden;}
-aside.sidebar{padding:28px;display:flex;flex-direction:column;gap:18px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(57,255,20,0.1);position:sticky;top:0;height:100vh;}
+.frame{width:100%;max-width:1100px;display:grid;grid-template-columns:300px 1fr;min-height:100vh;background:rgba(0,0,0,0.05);margin:0 auto;}
+aside.sidebar{padding:20px;display:flex;flex-direction:column;gap:15px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(57,255,20,0.1);}
 .logo{display:flex;gap:12px;align-items:center;}
 .dot{width:14px;height:14px;border-radius:50%;background:var(--text-dark);}
 .title{font-weight:700;font-size:20px;letter-spacing:0.6px}
@@ -246,11 +246,19 @@ body.light-theme .tech-badges span{
 
 /* Responsive */
 @media (max-width:780px){
-  .frame{grid-template-columns:1fr;padding:1rem;}
-  aside.sidebar{height:auto;position:relative;border-right:none;border-bottom:1px solid rgba(57,255,20,0.06);}
-  main.terminal-wrap{padding:16px;}
-  .projects-grid{grid-template-columns:1fr;}
-  .cert-grid{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+  html,body{display:block;align-items:stretch;justify-content:stretch;}
+  .frame{grid-template-columns:1fr;min-height:auto;border-radius:0;margin:0;}
+  aside.sidebar{height:auto;position:relative;border-right:none;border-bottom:1px solid rgba(57,255,20,0.06);padding:15px;}
+  main.terminal-wrap{padding:15px;}
+  .term{margin-top:10px;padding:15px;min-height:300px;}
+  .projects-grid{grid-template-columns:1fr;gap:12px;}
+  .cert-grid{grid-template-columns:1fr;gap:10px;}
+  .skills-grid{grid-template-columns:repeat(2,1fr);gap:6px;}
+  .nav{gap:6px;}
+  .nav a{padding:8px 10px;font-size:12px;}
+  .title{font-size:18px;}
+  .subtitle{font-size:11px;}
+  img{width:80px!important;height:80px!important;}
 }
 </style>
 </head>
@@ -261,10 +269,10 @@ body.light-theme .tech-badges span{
     <div class="logo"><div class="dot"></div>
       <div>
         <h1 class="title">David Kljajo</h1>
-        <div class="subtitle">Senior DevOps Engineer | Credly Verified</div>
+        <div class="subtitle">DevOps Engineer | Credly Verified</div>
       </div>
     </div>
-    <img src="photo.jpg" alt="David Kljajo - Senior DevOps Engineer specializing in AWS, Docker, and Kubernetes" style="width:120px;height:120px;border-radius:50%;border:2px solid var(--text-dark);margin:10px 0;">
+    <img src="photo.jpg" alt="David Kljajo - DevOps Engineer specializing in AWS, Docker, and Kubernetes" style="width:120px;height:120px;border-radius:50%;border:2px solid var(--text-dark);margin:10px 0;">
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="#home" data-nav>Home</a>
       <a href="#projects" data-nav>Projects</a>
@@ -285,7 +293,7 @@ body.light-theme .tech-badges span{
       <section id="page-home" class="page">
         <div class="panel"><div class="line" id="home-line"></div></div>
         <div class="panel">
-          <div class="line"><strong>David Kljajo - Senior DevOps Engineer</strong></div>
+          <div class="line"><strong>David Kljajo - DevOps Engineer</strong></div>
           <div class="small">
             <p>🚀 <strong>Specializing in:</strong> AWS Cloud Architecture, Docker Containerization, Kubernetes Orchestration, Python Automation</p>
             <p>📍 <strong>Location:</strong> Available for Remote Work Worldwide</p>
