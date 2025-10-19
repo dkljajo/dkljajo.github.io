@@ -3,39 +3,30 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="Portfolio of D4v1d Klj4j0 — DevOps, Linux, Python, AWS, and Cloud Automation projects" />
-<title>D4v1d Klj4j0 — Portfolio</title>
+<meta name="description" content="David Kljajo — DevOps, Cloud, Linux, Python, AWS projects, GitHub repositories, and featured projects portfolio" />
+<meta name="keywords" content="David Kljajo, DevOps, AWS, Cloud, Python, Linux, GitHub, Portfolio" />
+<meta name="author" content="David Kljajo" />
+<title>David Kljajo — Portfolio & Projects</title>
 
 <!-- Open Graph / Twitter -->
-<meta property="og:title" content="D4v1d Klj4j0 — DevOps Portfolio">
+<meta property="og:title" content="David Kljajo — DevOps Portfolio">
 <meta property="og:description" content="DevOps, Linux, Python, AWS, Cloud Automation">
-<meta property="og:image" content="https://staticfile-d4v1d.wasmer.app/photo.jpg">
-<meta property="og:url" content="https://staticfile-d4v1d.wasmer.app/">
+<meta property="og:image" content="photo.jpg">
+<meta property="og:url" content="https://yourdomain.com/">
 <meta name="twitter:card" content="summary_large_image">
-
-<!-- JSON-LD structured data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name":"D4v1d Klj4j0",
-  "url":"https://staticfile-d4v1d.wasmer.app/",
-  "sameAs":["https://github.com/dkljajo","https://www.linkedin.com/in/david-kljajo/"],
-  "jobTitle":"DevOps Engineer",
-  "worksFor": { "@type":"Organization", "name":"Independent/Contractor" }
-}
-</script>
 
 <style>
 :root{
-  --bg:#080808;
-  --green:#39ff14;
+  --bg-dark:#080808;
+  --text-dark:#39ff14;
+  --bg-light:#39ff14;
+  --text-light:#080808;
   --accent:#0ff;
   --mono:"Fira Mono","Source Code Pro",monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;background:var(--bg);color:var(--green);font-family:var(--mono);display:flex;align-items:center;justify-content:center;}
-a{color:var(--green);text-decoration:none;transition:0.2s;}
+html,body{height:100%;background:var(--bg-dark);color:var(--text-dark);font-family:var(--mono);display:flex;align-items:center;justify-content:center;}
+a{color:var(--text-dark);text-decoration:none;transition:0.2s;}
 a:hover{text-decoration:underline;}
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
 .skip-link:focus{position:static;width:auto;height:auto;left:0;background:#111;padding:8px;border-radius:4px;}
@@ -43,23 +34,23 @@ a:hover{text-decoration:underline;}
 .frame{width:100%;max-width:1100px;display:grid;grid-template-columns:300px 1fr;min-height:560px;background:rgba(0,0,0,0.05);border-radius:12px;overflow:hidden;}
 aside.sidebar{padding:28px;display:flex;flex-direction:column;gap:18px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(57,255,20,0.1);position:sticky;top:0;height:100vh;}
 .logo{display:flex;gap:12px;align-items:center;}
-.dot{width:14px;height:14px;border-radius:50%;background:var(--green);}
-.title{font-weight:700;font-size:18px;letter-spacing:0.6px}
-.subtitle{font-size:11px;color:rgba(57,255,20,0.55);margin-top:-4px}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--text-dark);}
+.title{font-weight:700;font-size:20px;letter-spacing:0.6px}
+.subtitle{font-size:12px;color:rgba(57,255,20,0.55);margin-top:-4px}
 .nav{display:flex;flex-direction:column;gap:8px;}
-.nav a{display:block;padding:10px 12px;border-radius:6px;color:var(--green);font-size:13px;border:1px solid rgba(57,255,20,0.03);}
+.nav a{display:block;padding:10px 12px;border-radius:6px;color:var(--text-dark);font-size:13px;border:1px solid rgba(57,255,20,0.03);}
 .nav a:hover{background:rgba(57,255,20,0.04);}
 main.terminal-wrap{padding:28px;background:rgba(0,0,0,0.3);position:relative;overflow:hidden;flex:1;}
 .term{margin-top:20px;padding:24px;border-radius:8px;background:rgba(0,0,0,0.15);min-height:420px;overflow:auto;border:1px solid rgba(57,255,20,0.04);position:relative;}
-.cursor{display:inline-block;width:8px;height:18px;background:var(--green);margin-left:6px;vertical-align:middle;animation:blink 1s steps(2) infinite;}
+.cursor{display:inline-block;width:8px;height:18px;background:var(--text-dark);margin-left:6px;vertical-align:middle;animation:blink 1s steps(2) infinite;}
 @keyframes blink{50%{opacity:0}}
-.matrix{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0.25;font-family:var(--mono);color:var(--green);font-size:12px;white-space:nowrap;}
+.matrix{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0.25;font-family:var(--mono);color:var(--text-dark);font-size:12px;white-space:nowrap;}
 .panel{padding:12px;border-radius:6px;margin-bottom:10px;background:rgba(0,0,0,0.06);border:1px solid rgba(57,255,20,0.03);}
-.line{white-space:pre-wrap;font-size:14px;line-height:1.45;color:var(--green);}
+.line{white-space:pre-wrap;font-size:14px;line-height:1.45;color:var(--text-dark);}
 .small{font-size:12px;color:rgba(57,255,20,0.6)}
-.button{display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid var(--green);border-radius:4px;color:var(--green);transition:0.2s;}
+.button{display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid var(--text-dark);border-radius:4px;color:var(--text-dark);transition:0.2s;cursor:pointer;}
 .button:hover{background:rgba(57,255,20,0.1);}
-.project-link{display:block;margin:4px 0;color:var(--green);}
+.project-link{display:block;margin:4px 0;color:var(--text-dark);}
 img{max-width:100%;border-radius:6px;}
 
 /* Project Cards */
@@ -72,21 +63,23 @@ img{max-width:100%;border-radius:6px;}
 .project-card{
   opacity:0;
   transform:translateY(20px);
-  transition:opacity 0.6s ease, transform 0.6s ease;
+  transition:all 0.6s ease;
   background:rgba(0,0,0,0.15);
   border:1px solid rgba(57,255,20,0.03);
   border-radius:8px;
   overflow:hidden;
   display:flex;
   flex-direction:column;
+  cursor:pointer;
 }
 .project-card.visible{
   opacity:1;
   transform:translateY(0);
 }
 .project-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 4px 12px rgba(57,255,20,0.2);
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 8px 25px rgba(57,255,20,0.3);
+  border-color:rgba(57,255,20,0.4);
 }
 .project-card img{
   width:100%;
@@ -130,11 +123,47 @@ img{max-width:100%;border-radius:6px;}
   margin-top:8px;
 }
 
+/* Light Theme - inverted colors: green on white */
+body.light-theme{
+  background:#ffffff;
+  color:#39ff14;
+}
+body.light-theme .sidebar{
+  background:#ffffff;
+  color:#39ff14;
+  border-right:1px solid rgba(0,0,0,0.1);
+}
+body.light-theme .term{
+  background:#e6ffe6;
+  border:1px solid rgba(0,0,0,0.1);
+  color:#39ff14;
+}
+body.light-theme .nav a,
+body.light-theme .button,
+body.light-theme .project-link,
+body.light-theme .tech-badges span{
+  color:#39ff14;
+  border-color:rgba(0,0,0,0.1);
+}
+
+/* Loading animation */
+.loading{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  border:3px solid rgba(57,255,20,0.3);
+  border-radius:50%;
+  border-top-color:var(--text-dark);
+  animation:spin 1s ease-in-out infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
 /* Responsive */
 @media (max-width:780px){
   .frame{grid-template-columns:1fr;padding:1rem;}
   aside.sidebar{height:auto;position:relative;border-right:none;border-bottom:1px solid rgba(57,255,20,0.06);}
   main.terminal-wrap{padding:16px;}
+  .projects-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -144,120 +173,102 @@ img{max-width:100%;border-radius:6px;}
   <aside class="sidebar" role="complementary" aria-label="Sidebar">
     <div class="logo"><div class="dot"></div>
       <div>
-        <h1 class="title">D4v1d Klj4j0</h1>
-        <div class="subtitle">DevOps | Cloud | AI </div>
+        <h1 class="title">David Kljajo</h1>
+        <div class="subtitle">DevOps | Cloud | AI</div>
       </div>
     </div>
-    <img src="photo.jpg" alt="Photo of D4v1d Klj4j0" style="width:80px;height:80px;border-radius:50%;border:2px solid var(--green);margin:10px 0;">
+    <img src="photo.jpg" alt="Photo of David Kljajo" style="width:120px;height:120px;border-radius:50%;border:2px solid var(--text-dark);margin:10px 0;">
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="#home" data-nav>Home</a>
+      <a href="#projects" data-nav>Featured Projects</a>
       <a href="#repos" data-nav>Repositories</a>
       <a href="#about" data-nav>About</a>
-      <a href="#projects" data-nav>Featured Projects</a>
+      <a href="#stats" data-nav>GitHub Stats</a>
     </nav>
-    <a href="./David_Kljajo_CV_25.pdf" class="button" download>Download CV</a>
-    <a href="mailto:davidkljajo@gmail.com" class="button">Email</a>
+    <div class="button" id="theme-toggle">Toggle Dark/Light</div>
+    <div class="button" id="copy-email">Copy Email</div>
   </aside>
   <main class="terminal-wrap" id="term" role="main" aria-live="polite">
     <div class="matrix" id="matrix"></div>
     <div class="term" id="term-content">
+
       <!-- Home -->
       <section id="page-home" class="page">
         <div class="panel"><div class="line" id="home-line"></div></div>
-      </section>
-
-      <!-- Repositories -->
-      <section id="page-repos" class="page" style="display:none">
-        <div class="panel"><div class="line"><strong>Repositories</strong></div></div>
-        <div class="panel" id="repos-list"></div>
-        <div class="panel"><a href="#home" class="button">Return to main page</a></div>
-      </section>
-
-      <!-- About -->
-      <section id="page-about" class="page" style="display:none">
-        <div class="panel">
-          <div class="line"><strong>About — D4v1d Klj4j0</strong></div>
-          <div class="small">
-            <p>I began my career as a manager and deputy director in a family-owned manufacturing company, then transitioned into tech with a focus on system administration, cloud automation, and technical support — earning multiple AWS, DevOps, Linux, Python, and Data Science specializations.</p>
-            <p>🔧 <strong>Key competencies:</strong></p>
-            <ul>
-              <li>DevOps & Cloud (AWS, Docker, Terraform, Ansible)</li>
-              <li>Linux Systems & Networking</li>
-              <li>CI/CD Pipelines & Infrastructure as Code</li>
-              <li>Python for Data Analysis & Automation</li>
-              <li>Customer & Technical Support</li>
-              <li>Project Management & Collaboration</li>
-            </ul>
-            <p><strong>Links:</strong></p>
-            <a href="https://github.com/dkljajo" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
-            <a href="https://www.linkedin.com/in/david-kljajo/" target="_blank" rel="noopener noreferrer" class="button">LinkedIn</a>
-            <a href="https://medium.com/@davidkljajo" target="_blank" rel="noopener noreferrer" class="button">Medium</a>
-          </div>
-        </div>
       </section>
 
       <!-- Featured Projects -->
       <section id="page-projects" class="page" style="display:none">
         <div class="panel"><div class="line"><strong>Featured Projects</strong></div></div>
         <div class="projects-grid">
-          <!-- Project cards here (same as previous snippet) -->
+          <!-- Project cards -->
           <div class="project-card">
-            
             <div class="project-content">
               <h3>Enterprise Knowledge Assistant</h3>
-              <p>A search and knowledge management assistant using Amazon Bedrock & OpenSearch to streamline enterprise data retrieval.</p>
+              <p>AI-powered search using Amazon Bedrock & OpenSearch.</p>
               <div class="tech-badges"><span>AWS</span><span>OpenSearch</span><span>Python</span></div>
-              <ul class="outcome">
-                <li>Reduced search time for internal documentation by 60%</li>
-                <li>Implemented AI-powered data extraction pipelines</li>
-              </ul>
+              <ul class="outcome"><li>Reduced internal search time by 60%</li></ul>
               <div class="project-links">
-                <a href="https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch" target="_blank" rel="noopener" class="button">GitHub</a>
+                <a href="https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch" target="_blank" class="button">GitHub</a>
               </div>
             </div>
           </div>
-          <!-- Add other project cards similarly -->
-           <!-- Project cards here (same as previous snippet) -->
+
           <div class="project-card">
-            
             <div class="project-content">
-              <h3> Deployment with Docker & Kubernetes</h3>
-              <p>Fully deployed Docker application with K8s orchestration</p>
-              <div class="tech-badges"><span>AWS</span><span>Docker</span><span>K8s</span></div>
-              <ul class="outcome">
-                <li>Optimized AWS infrastrucutre</li>
-                <li>Implemented Docker CI/CD pipeline with K8s orchestration</li>
-              </ul>
+              <h3>Docker & Kubernetes Deployment</h3>
+              <p>Full Dockerized app with Kubernetes orchestration.</p>
+              <div class="tech-badges"><span>AWS</span><span>Docker</span><span>Kubernetes</span></div>
+              <ul class="outcome"><li>Optimized AWS infrastructure</li></ul>
               <div class="project-links">
-                <a href="https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch" target="_blank" rel="noopener" class="button">GitHub</a>
+                <a href="https://github.com/dkljajo/My-First-Full-Dockerized-Kubernetes-Deployed-Web-App-" target="_blank" class="button">GitHub</a>
               </div>
             </div>
           </div>
-          <!-- Add other project cards similarly -->
-           <!-- Project cards here (same as previous snippet) -->
+
           <div class="project-card">
-            
             <div class="project-content">
               <h3>diplomski eApartmani</h3>
-              <p>Made a full stack web portal</p>
+              <p>Full-stack web portal for renting apartments.</p>
               <div class="tech-badges"><span>ASP.NET</span><span>MS SQL</span><span>JavaScript</span></div>
-              <ul class="outcome">
-                <li>Web application for renting apartments should be fast and efficient application that is simple and convenient to use. Although
-                  there is already a lot of similar web portals for renting apartments, but this project should be sorted out by the quality, simplicity,
-                  many of the new advanced functionalities, such as messaging, evaluation of apartments, comments, online booking, and
-                  searching by several parameters. The main goal is to create a web application that will be competitive in the market, in
-                  accordance with the latest trends and attract customers using advanced functionalities.
-                  rite here the description..</li>
-                
-              </ul>
+              <ul class="outcome"><li>Implemented messaging, reviews, booking & search features.</li></ul>
               <div class="project-links">
-                <a href="https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch" target="_blank" rel="noopener" class="button">GitHub</a>
+                <a href="https://github.com/dkljajo/david-kljajo-devops-mentorship" target="_blank" class="button">GitHub</a>
               </div>
             </div>
           </div>
-          <!-- Add other project cards similarly -->
         </div>
       </section>
+
+      <!-- Repositories -->
+      <section id="page-repos" class="page" style="display:none">
+        <div class="panel"><div class="line"><strong>Repositories</strong></div></div>
+        <div id="repos-list"></div>
+        <div class="panel"><div class="button" onclick="showPage('home');">Return to Home</div></div>
+      </section>
+
+      <!-- About -->
+      <section id="page-about" class="page" style="display:none">
+        <div class="panel">
+          <div class="line"><strong>About — David Kljajo</strong></div>
+          <div class="small">
+            <p>I began in management, then transitioned to tech focusing on system administration, cloud automation, DevOps, Linux, Python, and AWS.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Stats & Badges -->
+      <section id="page-stats" class="page" style="display:none">
+        <div class="panel">
+          <div class="line"><strong>GitHub Stats & Badges</strong></div>
+        </div>
+        <div class="panel">
+          <img src="https://github-readme-stats.vercel.app/api?username=dkljajo&show_icons=true&hide_title=true&count_private=true&theme=dark" alt="GitHub Stats">
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dkljajo&layout=compact&theme=dark" alt="Top Languages">
+          <img src="https://img.shields.io/github/stars/dkljajo?style=for-the-badge&logo=github&color=brightgreen" alt="Stars">
+        </div>
+      </section>
+
     </div>
   </main>
 </div>
@@ -265,90 +276,185 @@ img{max-width:100%;border-radius:6px;}
 <script>
 // Navigation
 function showPage(name){
-  const pages = document.querySelectorAll('.page');
-  pages.forEach(p => p.style.display='none');
-  const page = document.getElementById('page-'+name);
-  if(page) page.style.display='block';
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById('page-'+name).style.display='block';
 }
 window.addEventListener('hashchange',()=>showPage(location.hash.replace('#','')||'home'));
-window.addEventListener('load',()=>showPage(location.hash.replace('#','')||'home'));
-
-// Typing animation for home
-function typeText(el,text,speed=50){
-  el.textContent='';
-  let i=0;
-  const interval = setInterval(()=>{
-    el.textContent+=text[i];
-    i++;
-    if(i>=text.length) clearInterval(interval);
-  },speed);
-}
 window.addEventListener('load',()=>{
-  const line=document.getElementById('home-line');
-  typeText(line,"Welcome to my hacker terminal portfolio",40);
+  showPage(location.hash.replace('#','')||'home');
+  typeText(document.getElementById('home-line'),"Welcome to the portfolio of David Kljajo");
 });
 
-// Load GitHub repos
+// Typing animation
+function typeText(el,text,speed=40){
+  let i=0;el.textContent='';
+  const interval=setInterval(()=>{
+    el.textContent+=text[i];i++;if(i>=text.length)clearInterval(interval);
+  },speed);
+}
+
+// Enhanced GitHub repos loading
 async function loadRepos(){
-  const reposList = document.getElementById('repos-list');
-  reposList.innerHTML = '<div class="line small">Loading repos…</div>';
+  const reposDiv=document.getElementById('repos-list');
+  reposDiv.innerHTML='<div class="panel"><div class="line"><span class="loading"></span> Loading repositories...</div></div>';
   try{
-    const res = await fetch('https://api.github.com/users/dkljajo/repos?per_page=10&sort=pushed');
-    const data = await res.json();
-    reposList.innerHTML = '';
-    data.forEach(repo=>{
-      const div = document.createElement('div');
-      div.className='panel';
-      div.innerHTML=`
-        <div class="line"><strong><a href="${repo.html_url}" target="_blank">${repo.name}</a></strong></div>
-        <div class="small">${repo.description || 'No description'}</div>
-        <div class="small">★ ${repo.stargazers_count} • ${repo.language || '—'} • updated ${new Date(repo.pushed_at).toLocaleDateString()}</div>
-      `;
-      reposList.appendChild(div);
+    const res=await fetch('https://api.github.com/users/dkljajo/repos?sort=pushed&per_page=15');
+    const data=await res.json();
+    reposDiv.innerHTML='';
+    
+    data.forEach((r,i)=>{
+      setTimeout(()=>{
+        const div=document.createElement('div');
+        div.className='panel';
+        div.style.opacity='0';
+        div.style.transform='translateX(-20px)';
+        div.innerHTML=`
+          <div class="line"><strong><a href="${r.html_url}" target="_blank">${r.name}</a></strong></div>
+          <div class="small">${r.description||'No description available'}</div>
+          <div class="small">⭐ ${r.stargazers_count} • 🍴 ${r.forks_count} • ${r.language||'—'} • Updated ${new Date(r.pushed_at).toLocaleDateString()}</div>
+        `;
+        reposDiv.appendChild(div);
+        
+        setTimeout(()=>{
+          div.style.transition='all 0.4s ease';
+          div.style.opacity='1';
+          div.style.transform='translateX(0)';
+        },50);
+      },i*100);
     });
   }catch(e){
-    reposList.innerHTML=`<div class="line">Failed to load repositories: ${e.message}</div>`;
+    reposDiv.innerHTML='<div class="panel"><div class="line">❌ Failed to load repositories</div></div>';
   }
 }
 loadRepos();
 
 // Matrix animation
-const matrix=document.getElementById('matrix');
-const commands=['ssh deploy@prod','docker-compose up','terraform plan','kubectl get pods','journalctl -u app.service','tail -f /var/log/nginx/access.log','git status','git pull origin main','ansible-playbook site.yml'];
-let active=0,MAX_ACTIVE=20;
-function spawnColumn(x){
-  if(active>MAX_ACTIVE) return;
-  active++;
-  const el=document.createElement('div');
-  el.style.position='absolute';
-  el.style.left=x+'px';
-  el.style.fontSize=(8+Math.random()*8)+'px';
-  el.style.opacity=(0.2+Math.random()*0.6);
-  matrix.appendChild(el);
-  let height=0;
-  const max=30+Math.floor(Math.random()*50);
-  const id=setInterval(()=>{
-    height++;
-    let s='';
-    for(let i=0;i<Math.min(height,max);i++){
-      s+=Math.random()<0.3?Math.random()<0.5?'0':'1':commands[Math.floor(Math.random()*commands.length)];
-      s+=' ';
-    }
-    el.textContent=s;
-    el.style.transform='translateY('+ (height*14)+'px)';
-    if(height>max){ clearInterval(id); el.remove(); active--; }
-  },40+Math.random()*40);
-}
+const matrix=document.getElementById('matrix');const commands=['ssh deploy@prod','docker-compose up','terraform plan','kubectl get pods','journalctl -u app.service','git status','git pull origin main','ansible-playbook site.yml'];let active=0;const MAX_ACTIVE=20;
+function spawnColumn(x){if(active>MAX_ACTIVE)return;active++;const el=document.createElement('div');el.style.position='absolute';el.style.left=x+'px';el.style.fontSize=(8+Math.random()*8)+'px';el.style.opacity=(0.2+Math.random()*0.6);matrix.appendChild(el);let height=0;const max=30+Math.floor(Math.random()*50);const id=setInterval(()=>{height++;let s='';for(let i=0;i<Math.min(height,max);i++){s+=Math.random()<0.3?Math.random()<0.5?'0':'1':commands[Math.floor(Math.random()*commands.length)];s+=' ';}el.textContent=s;el.style.transform='translateY('+(height*14)+'px)';if(height>max){clearInterval(id);el.remove();active--;}} ,40+Math.random()*40);}
 setInterval(()=>spawnColumn(Math.random()*(matrix.clientWidth-20)),350);
 
-// Project card scroll animation
-const cards=document.querySelectorAll('.project-card');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add('visible');
+// Enhanced project card animations
+function animateProjectCards(){
+  document.querySelectorAll('.project-card').forEach((card,i)=>{
+    setTimeout(()=>{
+      card.classList.add('visible');
+    },i*200);
   });
-},{threshold:0.2});
-cards.forEach(card=>observer.observe(card));
+}
+
+// Trigger animations when projects page is shown
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById('page-'+name).style.display='block';
+  
+  if(name==='projects'){
+    setTimeout(animateProjectCards,100);
+  }
+}
+
+// Dark/light toggle
+const body=document.body;
+document.getElementById('theme-toggle').addEventListener('click',()=>{body.classList.toggle('light-theme');});
+
+// Enhanced email copy with better UX
+document.getElementById('copy-email').addEventListener('click',()=>{
+  navigator.clipboard.writeText('davidkljajo@gmail.com').then(()=>{
+    const btn=document.getElementById('copy-email');
+    const orig=btn.textContent;
+    btn.textContent='✓ Copied!';
+    btn.style.background='rgba(57,255,20,0.2)';
+    setTimeout(()=>{btn.textContent=orig;btn.style.background='';},2000);
+  });
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown',(e)=>{
+  if(e.ctrlKey||e.metaKey){
+    switch(e.key){
+      case '1':e.preventDefault();location.hash='home';break;
+      case '2':e.preventDefault();location.hash='projects';break;
+      case '3':e.preventDefault();location.hash='repos';break;
+      case '4':e.preventDefault();location.hash='about';break;
+      case '5':e.preventDefault();location.hash='stats';break;
+    }
+  }
+});
+
+// Terminal command simulation
+const terminalCommands={
+  'help':'Available commands: ls, whoami, skills, contact, clear',
+  'ls':'projects/ repositories/ about.txt skills.txt',
+  'whoami':'David Kljajo - DevOps Engineer',
+  'skills':'AWS, Docker, Kubernetes, Python, Linux, Terraform',
+  'contact':'Email: davidkljajo@gmail.com | LinkedIn: /in/david-kljajo',
+  'clear':''
+};
+
+let commandHistory=[];
+let historyIndex=-1;
+
+// Add terminal input to home page
+window.addEventListener('load',()=>{
+  const homePage=document.getElementById('page-home');
+  const terminalInput=document.createElement('div');
+  terminalInput.innerHTML=`
+    <div class="panel">
+      <div class="line">Type 'help' for available commands or use navigation menu</div>
+      <div class="line">$ <input type="text" id="cmd-input" style="background:transparent;border:none;color:var(--text-dark);font-family:var(--mono);outline:none;width:80%;" placeholder="Enter command..."></div>
+      <div id="cmd-output"></div>
+    </div>
+  `;
+  homePage.appendChild(terminalInput);
+  
+  const cmdInput=document.getElementById('cmd-input');
+  const cmdOutput=document.getElementById('cmd-output');
+  
+  cmdInput.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter'){
+      const cmd=cmdInput.value.trim().toLowerCase();
+      if(cmd){
+        commandHistory.push(cmd);
+        historyIndex=commandHistory.length;
+        
+        const outputLine=document.createElement('div');
+        outputLine.className='line';
+        outputLine.innerHTML=`$ ${cmd}`;
+        cmdOutput.appendChild(outputLine);
+        
+        const response=terminalCommands[cmd]||`Command not found: ${cmd}. Type 'help' for available commands.`;
+        
+        if(cmd==='clear'){
+          cmdOutput.innerHTML='';
+        }else{
+          const responseLine=document.createElement('div');
+          responseLine.className='line small';
+          responseLine.textContent=response;
+          cmdOutput.appendChild(responseLine);
+        }
+        
+        cmdInput.value='';
+        cmdOutput.scrollTop=cmdOutput.scrollHeight;
+      }
+    }
+    else if(e.key==='ArrowUp'){
+      e.preventDefault();
+      if(historyIndex>0){
+        historyIndex--;
+        cmdInput.value=commandHistory[historyIndex];
+      }
+    }
+    else if(e.key==='ArrowDown'){
+      e.preventDefault();
+      if(historyIndex<commandHistory.length-1){
+        historyIndex++;
+        cmdInput.value=commandHistory[historyIndex];
+      }else{
+        historyIndex=commandHistory.length;
+        cmdInput.value='';
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
