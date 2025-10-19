@@ -267,7 +267,7 @@ body.light-theme .tech-badges span{
     <img src="photo.jpg" alt="David Kljajo - Senior DevOps Engineer specializing in AWS, Docker, and Kubernetes" style="width:120px;height:120px;border-radius:50%;border:2px solid var(--text-dark);margin:10px 0;">
     <nav class="nav" role="navigation" aria-label="Main navigation">
       <a href="#home" data-nav>Home</a>
-      <a href="#projects" data-nav>Featured Projects</a>
+      <a href="#projects" data-nav>Projects</a>
       <a href="#repos" data-nav>Repositories</a>
       <a href="#about" data-nav>About</a>
       <a href="#stats" data-nav>GitHub Stats</a>
@@ -332,7 +332,7 @@ body.light-theme .tech-badges span{
 
       <!-- Featured Projects -->
       <section id="page-projects" class="page" style="display:none">
-        <div class="panel"><div class="line"><strong>Featured Projects</strong></div></div>
+        <div class="panel"><div class="line"><strong>Projects</strong></div></div>
         <div class="projects-grid">
           <!-- Project cards -->
           <div class="project-card">
@@ -567,11 +567,17 @@ document.addEventListener('keydown',(e)=>{
 
 // Terminal command simulation
 const terminalCommands={
-  'help':'Available commands: ls, whoami, skills, contact, clear',
-  'ls':'projects/ repositories/ about.txt skills.txt',
+  'help':'Available commands: ls, whoami, skills, contact, clear, projects, repositories, about, experience, certifications, stats',
+  'ls':'projects/ repositories/ about.txt skills.txt experience/ certifications/ stats/',
   'whoami':'David Kljajo - DevOps Engineer',
   'skills':'AWS, Docker, Kubernetes, Python, Linux, Terraform',
   'contact':'Email: davidkljajo@gmail.com | LinkedIn: /in/david-kljajo',
+  'projects':'Opening projects section...',
+  'repositories':'Opening repositories section...',
+  'about':'Opening about section...',
+  'experience':'Opening experience section...',
+  'certifications':'Opening certifications section...',
+  'stats':'Opening GitHub stats section...',
   'clear':''
 };
 
@@ -610,6 +616,14 @@ window.addEventListener('load',()=>{
         
         if(cmd==='clear'){
           cmdOutput.innerHTML='';
+        }else if(['projects','repositories','about','experience','certifications','stats'].includes(cmd)){
+          const responseLine=document.createElement('div');
+          responseLine.className='line small';
+          responseLine.textContent=response;
+          cmdOutput.appendChild(responseLine);
+          setTimeout(()=>{
+            location.hash=cmd;
+          },500);
         }else{
           const responseLine=document.createElement('div');
           responseLine.className='line small';
