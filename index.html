@@ -8,6 +8,10 @@
 <meta name="author" content="David Kljajo" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://dkljajo.github.io/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://api.github.com">
+<meta name="theme-color" content="#39ff14">
+<link rel="manifest" href="manifest.json">
 <title>David Kljajo - DevOps Engineer | AWS, Docker, Kubernetes Expert | Portfolio</title>
 
 <!-- Open Graph -->
@@ -146,27 +150,44 @@ img{max-width:100%;border-radius:6px;}
   margin-top:8px;
 }
 
-/* Light Theme - inverted colors: green on white */
+/* Light Theme - black text on white background */
 body.light-theme{
   background:#ffffff;
-  color:#39ff14;
+  color:#000000;
 }
 body.light-theme .sidebar{
-  background:#ffffff;
-  color:#39ff14;
-  border-right:1px solid rgba(0,0,0,0.1);
+  background:#f8f9fa;
+  color:#000000;
+  border-right:1px solid rgba(0,0,0,0.2);
 }
 body.light-theme .term{
-  background:#e6ffe6;
-  border:1px solid rgba(0,0,0,0.1);
-  color:#39ff14;
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,0.2);
+  color:#000000;
 }
 body.light-theme .nav a,
 body.light-theme .button,
-body.light-theme .project-link,
+body.light-theme .project-link{
+  color:#000000;
+  border-color:rgba(0,0,0,0.2);
+}
 body.light-theme .tech-badges span{
-  color:#39ff14;
-  border-color:rgba(0,0,0,0.1);
+  color:#000000;
+  background:rgba(0,0,0,0.1);
+  border-color:rgba(0,0,0,0.2);
+}
+body.light-theme .small{
+  color:#666666;
+}
+body.light-theme .dot{
+  background:#000000;
+}
+body.light-theme .skill-progress{
+  background:#000000;
+}
+body.light-theme .matrix{
+  color:#cccccc;
+  opacity:0.1;
 }
 
 /* Loading animation */
@@ -282,7 +303,7 @@ body.light-theme .tech-badges span{
       <a href="#certs" data-nav>Certifications</a>
       <a href="#experience" data-nav>Experience</a>
     </nav>
-    <div class="button" id="theme-toggle">Toggle Dark/Light</div>
+    <div class="button" id="theme-toggle">Toggle Theme</div>
     <div class="button" id="copy-email">Copy Email</div>
   </aside>
   <main class="terminal-wrap" id="term" role="main" aria-live="polite">
@@ -291,6 +312,7 @@ body.light-theme .tech-badges span{
 
       <!-- Home -->
       <section id="page-home" class="page">
+        <h2 style="display:none;">David Kljajo DevOps Engineer Portfolio</h2>
         <div class="panel"><div class="line" id="home-line"></div></div>
         <div class="panel">
           <div class="line"><strong>David Kljajo - DevOps Engineer</strong></div>
