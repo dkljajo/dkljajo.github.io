@@ -1,6 +1,5 @@
 {
-    email davidkljajo@gmail.com
-    # Optional: increase logging detail
+    email your@email.com
     log {
         output stdout
         level INFO
