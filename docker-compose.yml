@@ -1,68 +1,81 @@
-version: '3.9'
+version: "3.8"
 
 services:
-  caddy:
-    image: caddy:2
-    container_name: dkljajogithubio-caddy
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      - nextcloud
-      - pihole
-      - checkmk
-
-  nextcloud:
-    image: nextcloud
-    container_name: dkljajogithubio-nextcloud
-    restart: unless-stopped
-    environment:
-      - NEXTCLOUD_ADMIN_USER=admin
-      - NEXTCLOUD_ADMIN_PASSWORD=yourpassword
-      - MYSQL_PASSWORD=nextcloud_db_password
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_HOST=db
-    depends_on:
-      - db
-
   db:
-    image: mariadb
+    image: mariadb:latest
     container_name: dkljajogithubio-db
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=nextcloud_db_password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+
+  nextcloud:
+    image: nextcloud:32-apache
+    container_name: dkljajogithubio-nextcloud
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_HOST: db
+    volumes:
+      - nextcloud_data:/var/www/html
 
   pihole:
-    image: pihole/pihole
+    image: pihole/pihole:latest
     container_name: dkljajogithubio-pihole
-    environment:
-      - TZ=Europe/Amsterdam
-      - WEBPASSWORD=yourpiholepassword
-      - DNS1=1.1.1.1
-      - DNS2=8.8.8.8
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "67:67/udp"
-      - "80:80"
-      - "443:443"
     restart: unless-stopped
+    environment:
+      WEBPASSWORD: ${PIHOLE_PASSWORD}
+    ports:
+      - "8053:53/tcp"
+      - "8053:53/udp"
+      - "8067:67/udp"
+      - "8080:80/tcp"
+      - "8443:443/tcp"
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - pihole_data:/etc/pihole
+      - dnsmasq_data:/etc/dnsmasq.d
 
   checkmk:
     image: checkmk/check-mk-raw:2.2.0
     container_name: dkljajogithubio-checkmk
+    restart: unless-stopped
     ports:
       - "5000:5000"
+      - "6557:6557"
+    volumes:
+      - checkmk_data:/opt/omd/sites
+
+  caddy:
+    image: caddy:2
+    container_name: dkljajogithubio-caddy
     restart: unless-stopped
+    depends_on:
+      - nextcloud
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile
 
 volumes:
+  db_data:
+  nextcloud_data:
+  pihole_data:
+  dnsmasq_data:
+  checkmk_data:
   caddy_data:
   caddy_config:
