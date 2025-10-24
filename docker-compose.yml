@@ -1,8 +1,9 @@
+version: '3.9'
+
 services:
   caddy:
     image: caddy:2
-    container_name: dkljajogithubio-caddy-1
-    restart: unless-stopped
+    container_name: dkljajogithubio-caddy
     ports:
       - "80:80"
       - "443:443"
@@ -10,12 +11,57 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-    environment:
-      - DUCKDNS_TOKEN=${DUCKDNS_TOKEN}
     depends_on:
       - nextcloud
       - pihole
       - checkmk
+
+  nextcloud:
+    image: nextcloud
+    container_name: dkljajogithubio-nextcloud
+    restart: unless-stopped
+    environment:
+      - NEXTCLOUD_ADMIN_USER=admin
+      - NEXTCLOUD_ADMIN_PASSWORD=yourpassword
+      - MYSQL_PASSWORD=nextcloud_db_password
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+    depends_on:
+      - db
+
+  db:
+    image: mariadb
+    container_name: dkljajogithubio-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=nextcloud_db_password
+
+  pihole:
+    image: pihole/pihole
+    container_name: dkljajogithubio-pihole
+    environment:
+      - TZ=Europe/Amsterdam
+      - WEBPASSWORD=yourpiholepassword
+      - DNS1=1.1.1.1
+      - DNS2=8.8.8.8
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "67:67/udp"
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
+
+  checkmk:
+    image: checkmk/check-mk-raw:2.2.0
+    container_name: dkljajogithubio-checkmk
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
 
 volumes:
   caddy_data:
