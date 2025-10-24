@@ -1,28 +1,36 @@
 {
-    email your@email.com
-    log {
-        output stdout
-        level INFO
-    }
+	email dkljajo@gmail.com
 }
 
 dkljajo.duckdns.org {
-    encode gzip
-    tls {
-        dns duckdns {env.DUCKDNS_TOKEN}
-    }
+	encode gzip zstd
 
-    handle_path /nextcloud/* {
-        reverse_proxy nextcloud:80
-    }
+	# Reverse proxy services
+	reverse_proxy /nextcloud/* nextcloud:80
+	reverse_proxy /admin/* pihole:80
+	reverse_proxy /cmk/* checkmk:5000
 
-    handle_path /pihole/* {
-        reverse_proxy pihole:80
-    }
+	# Redirect root to Nextcloud
+	handle_path / {
+		redir /nextcloud/
+	}
 
-    handle_path /checkmk/* {
-        reverse_proxy checkmk:5000
-    }
+	# Security headers
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "no-referrer-when-downgrade"
+		Permissions-Policy "geolocation=(), microphone=(), camera=()"
+	}
 
-    respond "✅ Caddy Reverse Proxy active and secured with Let's Encrypt at dkljajo.duckdns.org" 200
+	# Enable HTTPS via DuckDNS DNS challenge
+	tls {
+		dns duckdns {env.DUCKDNS_TOKEN}
+	}
+
+	log {
+		output stdout
+		format console
+	}
 }
