@@ -1,10 +1,38 @@
-version: '3.8'
 services:
   caddy:
-    image: caddy:2
+    image: caddy:2.10.2
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - dkljajo_net
+
   nextcloud:
-    image: nextcloud
+    image: nextcloud:27
+    container_name: nextcloud
+    networks:
+      - dkljajo_net
+
   pihole:
-    image: pihole/pihole
+    image: pihole/pihole:latest
+    container_name: pihole
+    networks:
+      - dkljajo_net
+
   checkmk:
-    image: checkmk/check-mk-raw:2.2.0
+    image: checkmk/check-mk-raw:3.7.0
+    container_name: checkmk
+    networks:
+      - dkljajo_net
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+networks:
+  dkljajo_net:
