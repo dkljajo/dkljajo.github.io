@@ -1,9 +1,7 @@
-version: "3.8"
-
 services:
   caddy:
     image: caddy:2
-    container_name: dkljajogithubio_caddy_1
+    container_name: dkljajogithubio-caddy-1
     restart: unless-stopped
     ports:
       - "80:80"
@@ -18,46 +16,7 @@ services:
       - nextcloud
       - pihole
       - checkmk
-    networks:
-      - webnet
-
-  nextcloud:
-    image: nextcloud
-    container_name: dkljajogithubio_nextcloud_1
-    restart: unless-stopped
-    volumes:
-      - nextcloud_data:/var/www/html
-    networks:
-      - webnet
-
-  pihole:
-    image: pihole/pihole
-    container_name: dkljajogithubio_pihole_1
-    restart: unless-stopped
-    environment:
-      - WEBPASSWORD=${PIHOLE_WEBPASSWORD}
-    volumes:
-      - pihole_data:/etc/pihole
-      - dnsmasq_data:/etc/dnsmasq.d
-    networks:
-      - webnet
-    cap_add:
-      - NET_ADMIN
-
-  checkmk:
-    image: checkmk/check-mk-raw:2.2.0
-    container_name: dkljajogithubio_checkmk_1
-    restart: unless-stopped
-    networks:
-      - webnet
 
 volumes:
   caddy_data:
   caddy_config:
-  nextcloud_data:
-  pihole_data:
-  dnsmasq_data:
-
-networks:
-  webnet:
-    driver: bridge
