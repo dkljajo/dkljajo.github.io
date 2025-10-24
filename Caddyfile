@@ -1,7 +1,11 @@
 {$DUCKDNS_DOMAIN} {
-    reverse_proxy nextcloud:80
 
-    tls {
-        dns duckdns {$DUCKDNS_TOKEN}
-    }
+    encode gzip
+
+    # Nextcloud reverse proxy
+    reverse_proxy /nextcloud/* dkljajogithubio-nextcloud:80
+
+    # Optional: serve static files at root if you have a website
+    # root * /srv
+    # file_server
 }
