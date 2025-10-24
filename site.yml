@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+    - essentials
+    - docker
+    - traefik
+    - wireguard
