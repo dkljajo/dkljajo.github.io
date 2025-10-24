@@ -1,10 +1,17 @@
 {
-    davidkljajo@gmail.com
-    auto_https on
+    email davidkljajo@gmail.com
+    # Optional: increase logging detail
+    log {
+        output stdout
+        level INFO
+    }
 }
 
-dkljajo.duckdns.org.duckdns.org {
+dkljajo.duckdns.org {
     encode gzip
+    tls {
+        dns duckdns {env.DUCKDNS_TOKEN}
+    }
 
     handle_path /nextcloud/* {
         reverse_proxy nextcloud:80
@@ -18,5 +25,5 @@ dkljajo.duckdns.org.duckdns.org {
         reverse_proxy checkmk:5000
     }
 
-    respond "✅ Caddy reverse proxy is running on DuckDNS!" 200
+    respond "✅ Caddy Reverse Proxy active and secured with Let's Encrypt at dkljajo.duckdns.org" 200
 }
