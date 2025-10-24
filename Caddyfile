@@ -1,23 +1,7 @@
-dkljajo.duckdns.org {
-    # Nextcloud
-    handle_path /nextcloud* {
-        reverse_proxy nextcloud:80
-    }
+{$DUCKDNS_DOMAIN} {
+    reverse_proxy nextcloud:80
 
-    # Pi-hole
-    handle_path /pihole* {
-        reverse_proxy pihole:80
+    tls {
+        dns duckdns {$DUCKDNS_TOKEN}
     }
-
-    # Checkmk
-    handle_path /checkmk* {
-        reverse_proxy checkmk:5000
-    }
-
-    # Optional: redirect root to Nextcloud
-    handle {
-        redir /nextcloud 302
-    }
-
-    encode gzip
 }
