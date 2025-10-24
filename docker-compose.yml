@@ -9,7 +9,7 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      - DUCKDNS_DOMAIN=yourdomain.duckdns.org   # replace with your actual DuckDNS domain
+      - DUCKDNS_DOMAIN=dkljajo.duckdns.org   # replace with your actual DuckDNS domain
     volumes:
       - caddy_data:/data
       - caddy_config:/config
