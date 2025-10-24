@@ -1,0 +1,19 @@
+http:// {
+  redir https://{host}{uri} permanent
+}
+
+https://nextcloud.dkljajo.github.io {
+  reverse_proxy nextcloud:80
+}
+
+https://pihole.dkljajo.github.io {
+  reverse_proxy pihole:80
+}
+
+https://checkmk.dkljajo.github.io {
+  reverse_proxy checkmk:5000
+}
+
+https://wg.dkljajo.github.io {
+  reverse_proxy wireguard:51820
+}
