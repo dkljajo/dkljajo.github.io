@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 version: "3.8"
+=======
+version: "3.9"
+>>>>>>> 79e8daa (mmmm)
 
 services:
   caddy:
@@ -9,13 +13,21 @@ services:
       - "80:80"
       - "443:443"
     environment:
+<<<<<<< HEAD
       - DUCKDNS_DOMAIN=dkljajo.duckdns.org   # replace with your actual DuckDNS domain
+=======
+      - DUCKDNS_DOMAIN=dkljajo.duckdns.org
+>>>>>>> 79e8daa (mmmm)
     volumes:
       - caddy_data:/data
       - caddy_config:/config
+<<<<<<< HEAD
       - ./Caddyfile:/etc/caddy/Caddyfile
     depends_on:
       - nextcloud
+=======
+      - ./logs:/var/log/caddy
+>>>>>>> 79e8daa (mmmm)
 
   nextcloud:
     image: nextcloud:32-apache
@@ -36,15 +48,55 @@ services:
     container_name: dkljajogithubio-db
     restart: unless-stopped
     environment:
+<<<<<<< HEAD
       - MYSQL_ROOT_PASSWORD=rootpass
+=======
+      - MYSQL_ROOT_PASSWORD=RootDBPass
+>>>>>>> 79e8daa (mmmm)
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=nextcloud
       - MYSQL_PASSWORD=NextcloudDBPass
     volumes:
       - db_data:/var/lib/mysql
+<<<<<<< HEAD
+=======
+
+  pihole:
+    image: pihole/pihole:latest
+    container_name: dkljajogithubio-pihole
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/London
+      - WEBPASSWORD=PiHolePass
+    ports:
+      - "8053:53/tcp"
+      - "8053:53/udp"
+      - "8080:80/tcp"
+      - "8443:443/tcp"
+    volumes:
+      - pihole_data:/etc/pihole
+      - dnsmasq_data:/etc/dnsmasq.d"
+
+  checkmk:
+    image: checkmk/check-mk-raw:2.2.0
+    container_name: dkljajogithubio-checkmk
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+      - "6557:6557"
+    volumes:
+      - checkmk_data:/omd/sites
+>>>>>>> 79e8daa (mmmm)
 
 volumes:
   caddy_data:
   caddy_config:
   nextcloud_data:
   db_data:
+<<<<<<< HEAD
+=======
+  pihole_data:
+  dnsmasq_data:
+  checkmk_data:
+
+>>>>>>> 79e8daa (mmmm)

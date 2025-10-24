@@ -1,11 +1,33 @@
+<<<<<<< HEAD
 dkljajo.duckdns.org {
+=======
+# Caddy v2 configuration
+>>>>>>> 79e8daa (mmmm)
 
+# Replace this with your actual DuckDNS domain
+${DUCKDNS_DOMAIN} {
     encode gzip
 
+<<<<<<< HEAD
     # Nextcloud reverse proxy
     reverse_proxy /nextcloud/* dkljajogithubio-nextcloud:80
 
     # Optional: serve static files at root if you have a website
     # root * /srv
     # file_server
+=======
+    # Reverse proxy to Nextcloud
+    reverse_proxy /nextcloud/* dkljajogithubio-nextcloud:80
+
+    # Reverse proxy to CheckMK
+    reverse_proxy /checkmk/* dkljajogithubio-checkmk:5000
+
+    # Reverse proxy to Pi-hole
+    reverse_proxy /pihole/* dkljajogithubio-pihole:80
+
+    log {
+        output file /var/log/caddy/access.log
+        format console
+    }
+>>>>>>> 79e8daa (mmmm)
 }
