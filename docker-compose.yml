@@ -24,26 +24,42 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_HOST: db
+      APACHE_SERVERNAME: ${DUCKDNS_DOMAIN}   # Added server name
     volumes:
       - nextcloud_data:/var/www/html
+
+  caddy:
+    image: caddy:2
+    container_name: dkljajogithubio-caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - nextcloud
 
   pihole:
     image: pihole/pihole:latest
     container_name: dkljajogithubio-pihole
     restart: unless-stopped
     environment:
+      TZ: ${TZ}
       WEBPASSWORD: ${PIHOLE_PASSWORD}
+      DNS1: 8.8.8.8
+      DNS2: 8.8.4.4
     ports:
       - "8053:53/tcp"
       - "8053:53/udp"
-      - "8067:67/udp"
       - "8080:80/tcp"
       - "8443:443/tcp"
-    cap_add:
-      - NET_ADMIN
+      - "8067:67/udp"
     volumes:
       - pihole_data:/etc/pihole
-      - dnsmasq_data:/etc/dnsmasq.d
+      - dnsmasq_data:/etc/dnsmasq.d"
 
   checkmk:
     image: checkmk/check-mk-raw:2.2.0
@@ -52,30 +68,11 @@ services:
     ports:
       - "5000:5000"
       - "6557:6557"
-    volumes:
-      - checkmk_data:/opt/omd/sites
-
-  caddy:
-    image: caddy:2
-    container_name: dkljajogithubio-caddy
-    restart: unless-stopped
-    depends_on:
-      - nextcloud
-    env_file:
-      - .env
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - caddy_data:/data
-      - caddy_config:/config
-      - ./Caddyfile:/etc/caddy/Caddyfile
 
 volumes:
   db_data:
   nextcloud_data:
-  pihole_data:
-  dnsmasq_data:
-  checkmk_data:
   caddy_data:
   caddy_config:
+  pihole_data:
+  dnsmasq_data:
