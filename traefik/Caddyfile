@@ -1,8 +1,9 @@
 {
-    email davidkljajo@gmail.com
+    davidkljajo@gmail.com
+    auto_https off
 }
 
-dkljajo.duckdns.org {
+dkljajo.duckdns.org.duckdns.org {
     encode gzip
 
     handle_path /nextcloud/* {
@@ -17,5 +18,5 @@ dkljajo.duckdns.org {
         reverse_proxy checkmk:5000
     }
 
-    respond "OK: Caddy is running!" 200
+    respond "✅ Caddy reverse proxy is running on DuckDNS!" 200
 }
