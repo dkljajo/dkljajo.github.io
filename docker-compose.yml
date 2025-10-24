@@ -1,33 +1,6 @@
 version: "3.8"
 
 services:
-  db:
-    image: mariadb:latest
-    container_name: dkljajogithubio-db
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - db_data:/var/lib/mysql
-
-  nextcloud:
-    image: nextcloud:32-apache
-    container_name: dkljajogithubio-nextcloud
-    restart: unless-stopped
-    depends_on:
-      - db
-    environment:
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_HOST: db
-      APACHE_SERVERNAME: ${DUCKDNS_DOMAIN}   # Added server name
-    volumes:
-      - nextcloud_data:/var/www/html
-
   caddy:
     image: caddy:2
     container_name: dkljajogithubio-caddy
@@ -35,6 +8,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      - DUCKDNS_DOMAIN=yourdomain.duckdns.org   # replace with your actual DuckDNS domain
     volumes:
       - caddy_data:/data
       - caddy_config:/config
@@ -42,37 +17,34 @@ services:
     depends_on:
       - nextcloud
 
-  pihole:
-    image: pihole/pihole:latest
-    container_name: dkljajogithubio-pihole
+  nextcloud:
+    image: nextcloud:32-apache
+    container_name: dkljajogithubio-nextcloud
     restart: unless-stopped
     environment:
-      TZ: ${TZ}
-      WEBPASSWORD: ${PIHOLE_PASSWORD}
-      DNS1: 8.8.8.8
-      DNS2: 8.8.4.4
-    ports:
-      - "8053:53/tcp"
-      - "8053:53/udp"
-      - "8080:80/tcp"
-      - "8443:443/tcp"
-      - "8067:67/udp"
+      - MYSQL_PASSWORD=NextcloudDBPass
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_HOST=db
+    depends_on:
+      - db
     volumes:
-      - pihole_data:/etc/pihole
-      - dnsmasq_data:/etc/dnsmasq.d"
+      - nextcloud_data:/var/www/html
 
-  checkmk:
-    image: checkmk/check-mk-raw:2.2.0
-    container_name: dkljajogithubio-checkmk
+  db:
+    image: mariadb:latest
+    container_name: dkljajogithubio-db
     restart: unless-stopped
-    ports:
-      - "5000:5000"
-      - "6557:6557"
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=NextcloudDBPass
+    volumes:
+      - db_data:/var/lib/mysql
 
 volumes:
-  db_data:
-  nextcloud_data:
   caddy_data:
   caddy_config:
-  pihole_data:
-  dnsmasq_data:
+  nextcloud_data:
+  db_data:
