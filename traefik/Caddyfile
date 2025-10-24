@@ -1,60 +1,21 @@
 {
-    # Global options block
-    email your-email@example.com
-    # Optional: increase security headers
-    servers {
-        protocols h1 h2 h3
-    }
+    email davidkljajo@gmail.com
 }
 
-# Root static site
-example.duckdns.org {
-    root * /app/html
-    file_server
-    encode zstd gzip
-    log {
-        output file /var/log/caddy/access.log {
-            roll_size 5MB
-            roll_keep 2
-            roll_keep_for 48h
-        }
-    }
-    header {
-        # Security headers
-        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-        X-Content-Type-Options "nosniff"
-        X-Frame-Options "DENY"
-        Referrer-Policy "no-referrer-when-downgrade"
-        X-XSS-Protection "1; mode=block"
-    }
-}
+dkljajo.duckdns.org {
+    encode gzip
 
-# Nextcloud
-nextcloud.example.duckdns.org {
-    reverse_proxy nextcloud:80
-    header {
-        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-        X-Content-Type-Options "nosniff"
+    handle_path /nextcloud/* {
+        reverse_proxy nextcloud:80
     }
-}
 
-# Pi-hole
-pihole.example.duckdns.org {
-    reverse_proxy pihole:80
-    header {
-        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    handle_path /pihole/* {
+        reverse_proxy pihole:80
     }
-}
 
-# Checkmk
-checkmk.example.duckdns.org {
-    reverse_proxy checkmk:5000
-    header {
-        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    handle_path /checkmk/* {
+        reverse_proxy checkmk:5000
     }
-}
 
-# Optional: Redirect all HTTP to HTTPS
-http:// {
-    redir https://{host}{uri} permanent
+    respond "OK: Caddy is running!" 200
 }
