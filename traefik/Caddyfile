@@ -1,33 +1,25 @@
-# Redirect all HTTP to HTTPS
-http:// {
-  redir https://{host}{uri} permanent
-}
-
-# Nextcloud
-https://nextcloud.dkljajo.duckdns.org {
+# Automatic HTTPS enabled for DuckDNS subdomains
+nextcloud.dkljajo.duckdns.org {
   reverse_proxy nextcloud:80
   encode gzip
 }
 
-# Pi-hole
-https://pihole.dkljajo.duckdns.org {
+pihole.dkljajo.duckdns.org {
   reverse_proxy pihole:80
   encode gzip
 }
 
-# Checkmk
-https://checkmk.dkljajo.duckdns.org {
+checkmk.dkljajo.duckdns.org {
   reverse_proxy checkmk:5000
   encode gzip
 }
 
-# WireGuard
-https://wg.dkljajo.duckdns.org {
+wg.dkljajo.duckdns.org {
   reverse_proxy wireguard:51820
   encode gzip
 }
 
-# Optional: global security headers
+# Global security headers
 {
   header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   header X-Content-Type-Options "nosniff"
