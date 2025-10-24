@@ -1,28 +1,7 @@
-# Automatic HTTPS enabled for DuckDNS subdomains
-nextcloud.dkljajo.duckdns.org {
-  reverse_proxy nextcloud:80
+${DUCKDNS_DOMAIN} {
   encode gzip
-}
-
-pihole.dkljajo.duckdns.org {
-  reverse_proxy pihole:80
-  encode gzip
-}
-
-checkmk.dkljajo.duckdns.org {
-  reverse_proxy checkmk:5000
-  encode gzip
-}
-
-wg.dkljajo.duckdns.org {
-  reverse_proxy wireguard:51820
-  encode gzip
-}
-
-# Global security headers
-{
-  header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  header X-Content-Type-Options "nosniff"
-  header X-Frame-Options "DENY"
-  header Referrer-Policy "no-referrer"
+  reverse_proxy /nextcloud* nextcloud:80
+  reverse_proxy /pihole* pihole:80
+  reverse_proxy /checkmk* checkmk:80
+  tls ${DUCKDNS_TOKEN}
 }

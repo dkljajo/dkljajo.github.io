@@ -1,69 +1,10 @@
-version: "3.9"
-
+version: '3.8'
 services:
   caddy:
-    image: caddy:2.10.2
-    container_name: caddy
-    environment:
-      DUCKDNS_TOKEN: cf4b13ef-ef5b-4913-80b1-9513b9ca3e3a
-    volumes:
-      - ./traefik/Caddyfile:/etc/caddy/Caddyfile
-      - ./traefik/acme.json:/data/acme.json
-    ports:
-      - "80:80"
-      - "443:443"
-
-
+    image: caddy:2
   nextcloud:
-    image: nextcloud:latest
-    container_name: nextcloud
-    restart: always
-    environment:
-      - MYSQL_PASSWORD=password
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_HOST=db
-    depends_on:
-      - db
-    labels:
-      - "caddy=nextcloud.dkljajo.duckdns.org"
-
-  db:
-    image: mariadb:latest
-    container_name: nextcloud-db
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_DATABASE=nextcloud
-      - MYSQL_USER=nextcloud
-      - MYSQL_PASSWORD=password
-
+    image: nextcloud
   pihole:
-    image: pihole/pihole:latest
-    container_name: pihole
-    restart: always
-    environment:
-      - WEBPASSWORD=secret
-    labels:
-      - "caddy=pihole.dkljajo.duckdns.org"
-
+    image: pihole/pihole
   checkmk:
-    image: checkmk/check-mk-raw:2.2.0-latest
-    container_name: checkmk
-    restart: always
-    labels:
-      - "caddy=checkmk.dkljajo.duckdns.org"
-
-  wireguard:
-    image: linuxserver/wireguard:latest
-    container_name: wireguard
-    restart: always
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    labels:
-      - "caddy=wg.dkljajo.duckdns.org"
-    cap_add:
-      - NET_ADMIN
-      - SYS_MODULE
+    image: checkmk/check-mk-raw:2.2.0
