@@ -13,6 +13,8 @@ services:
       - ./traefik/traefik.yml:/etc/traefik/traefik.yml
       - ./traefik/acme.json:/acme.json
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./Caddyfile:/etc/caddy/Caddyfile
+
 
   nextcloud:
     image: nextcloud:latest
