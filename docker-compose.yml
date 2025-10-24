@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   traefik:
-    image: traefik:v2.10
+    image: caddy:2.10.2
     container_name: traefik
     restart: always
     ports:
@@ -11,7 +11,7 @@ services:
       - "443:443"
     volumes:
       - ./traefik/Caddyfile:/etc/caddy/Caddyfile
-      - ./traefik/acme.json:/acme.json
+      - ./traefik/acme.json:/data/acme.json
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   nextcloud:
@@ -26,8 +26,8 @@ services:
     depends_on:
       - db
     labels:
-      - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.dkljajo.github.io`)"
-      
+      - "caddy=nextcloud.dkljajo.duckdns.org"
+
   db:
     image: mariadb:latest
     container_name: nextcloud-db
@@ -45,15 +45,15 @@ services:
     environment:
       - WEBPASSWORD=secret
     labels:
-      - "traefik.http.routers.pihole.rule=Host(`pihole.dkljajo.github.io`)"
-      
+      - "caddy=pihole.dkljajo.duckdns.org"
+
   checkmk:
     image: checkmk/check-mk-raw:2.2.0-latest
     container_name: checkmk
     restart: always
     labels:
-      - "traefik.http.routers.checkmk.rule=Host(`checkmk.dkljajo.github.io`)"
-      
+      - "caddy=checkmk.dkljajo.duckdns.org"
+
   wireguard:
     image: linuxserver/wireguard:latest
     container_name: wireguard
@@ -63,7 +63,7 @@ services:
       - PGID=1000
       - TZ=Europe/London
     labels:
-      - "traefik.http.routers.wireguard.rule=Host(`wg.dkljajo.github.io`)"
+      - "caddy=wg.dkljajo.duckdns.org"
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
