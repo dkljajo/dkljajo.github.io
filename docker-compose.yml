@@ -10,11 +10,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./traefik/traefik.yml:/etc/traefik/traefik.yml
+      - ./traefik/Caddyfile:/etc/caddy/Caddyfile
       - ./traefik/acme.json:/acme.json
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./Caddyfile:/etc/caddy/Caddyfile
-
 
   nextcloud:
     image: nextcloud:latest
@@ -29,7 +27,7 @@ services:
       - db
     labels:
       - "traefik.http.routers.nextcloud.rule=Host(`nextcloud.dkljajo.github.io`)"
-
+      
   db:
     image: mariadb:latest
     container_name: nextcloud-db
@@ -48,14 +46,14 @@ services:
       - WEBPASSWORD=secret
     labels:
       - "traefik.http.routers.pihole.rule=Host(`pihole.dkljajo.github.io`)"
-
+      
   checkmk:
     image: checkmk/check-mk-raw:2.2.0-latest
     container_name: checkmk
     restart: always
     labels:
       - "traefik.http.routers.checkmk.rule=Host(`checkmk.dkljajo.github.io`)"
-
+      
   wireguard:
     image: linuxserver/wireguard:latest
     container_name: wireguard
