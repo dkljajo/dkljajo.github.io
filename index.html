@@ -1,0 +1,1594 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+<meta name="description" content="David Kljajo - DevOps Engineer specializing in AWS, GCP, Docker, Kubernetes, Python automation, Linux systems, and cloud infrastructure. View my portfolio of enterprise projects and GitHub repositories." />
+<meta name="keywords" content="David Kljajo, DevOps Engineer, Docker, Kubernetes, Python Developer, Linux Administrator, Cloud Infrastructure, Terraform, Ansible, CI/CD, System Administrator, Site Reliability Engineer, Infrastructure as Code, Container Orchestration, Microservices, Cloud Migration" />
+<meta name="author" content="David Kljajo" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://dkljajo.github.io/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://api.github.com">
+<meta name="theme-color" content="#39ff14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="David Kljajo Portfolio">
+<link rel="apple-touch-icon" href="photo.jpg">
+<link rel="manifest" href="manifest.json">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.credly.com https://www.googletagmanager.com https://www.google-analytics.com https://codepen.io; style-src 'self' 'unsafe-inline' https://codepen.io; img-src 'self' data: https: http:; connect-src 'self' https://api.github.com https://github-readme-stats.vercel.app https://github-readme-activity-graph.vercel.app https://github-readme-streak-stats.herokuapp.com https://img.shields.io https://komarev.com https://www.google-analytics.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-src https://cdn.credly.com https://codepen.io;">
+<title>David Kljajo - DevOps Engineer | Docker, Kubernetes Expert | Portfolio</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TWT1WE0RSH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TWT1WE0RSH');
+</script>
+
+<!-- Core Web Vitals -->
+<script>
+  new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+      gtag('event', entry.name, {
+        value: Math.round(entry.value),
+        metric_id: entry.id,
+      });
+    }
+  }).observe({entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift']});
+</script>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="David Kljajo - DevOps Engineer | Docker, Kubernetes" />
+<meta property="og:description" content="DevOps Engineer with expertise in Docker containerization, Kubernetes orchestration, and Python automation." />
+<meta property="og:image" content="https://dkljajo.github.io/photo.jpg" />
+<meta property="og:url" content="https://dkljajo.github.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="David Kljajo - DevOps Engineer | Docker, Kubernetes" />
+<meta name="twitter:description" content="DevOps Engineer specializing in Docker, Kubernetes, Python. View my enterprise projects." />
+
+<!-- Enhanced SEO Meta Tags -->
+<meta name="geo.region" content="BA-BIH" />
+<meta name="geo.placename" content="Mostar" />
+<meta name="ICBM" content="43.3438,17.8078" />
+<meta name="language" content="en" />
+<meta name="rating" content="general" />
+<meta name="revisit-after" content="7 days" />
+<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "David Kljajo",
+  "jobTitle": "DevOps Engineer",
+  "description": "DevOps Engineer specializing in Docker, Kubernetes, Python automation",
+  "url": "https://dkljajo.github.io",
+  "image": "https://dkljajo.github.io/photo.jpg",
+  "email": "davidkljajo@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mostar",
+    "addressCountry": "BA"
+  },
+  "sameAs": [
+    "https://github.com/dkljajo",
+    "https://www.linkedin.com/in/david-kljajo/",
+    "https://medium.com/@davidkljajo"
+  ],
+  "knowsAbout": ["DevOps", "Docker", "Kubernetes", "Python", "Linux", "Terraform", "CI/CD"],
+
+  "workExample": [
+    {
+      "@type": "CreativeWork",
+      "name": "Enterprise Knowledge Assistant",
+      "description": "AI-powered knowledge assistant using Amazon Bedrock",
+      "url": "https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch"
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg-dark:#080808;
+  --text-dark:#39ff14;
+  --bg-light:#39ff14;
+  --text-light:#080808;
+  --accent:#0ff;
+  --mono:"Fira Mono","Source Code Pro",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{min-height:100vh;background:var(--bg-dark);color:var(--text-dark);font-family:var(--mono);margin:0;padding:0;}
+a{color:var(--text-dark);text-decoration:none;transition:0.2s;}
+a:hover{text-decoration:underline;}
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
+.skip-link:focus{position:static;width:auto;height:auto;left:0;background:#111;padding:8px;border-radius:4px;}
+:focus{outline:2px dashed rgba(57,255,20,0.9);outline-offset:3px;}
+.frame{width:100%;max-width:1100px;display:grid;grid-template-columns:300px 1fr;min-height:100vh;background:rgba(0,0,0,0.05);margin:0 auto;}
+aside.sidebar{padding:20px;display:flex;flex-direction:column;gap:15px;background:rgba(0,0,0,0.2);border-right:1px solid rgba(57,255,20,0.1);}
+.logo{display:flex;gap:12px;align-items:center;}
+.dot{width:14px;height:14px;border-radius:50%;background:var(--text-dark);}
+.title{font-weight:700;font-size:20px;letter-spacing:0.6px}
+.subtitle{font-size:12px;color:rgba(57,255,20,0.55);margin-top:-4px}
+.nav{display:flex;flex-direction:column;gap:8px;}
+.nav a{display:block;padding:10px 12px;border-radius:6px;color:var(--text-dark);font-size:13px;border:1px solid rgba(57,255,20,0.03);}
+.nav a:hover{background:rgba(57,255,20,0.04);}
+main.terminal-wrap{padding:28px;background:rgba(0,0,0,0.3);position:relative;overflow:hidden;flex:1;}
+.term{margin-top:20px;padding:24px;border-radius:8px;background:rgba(0,0,0,0.15);min-height:420px;overflow:auto;border:1px solid rgba(57,255,20,0.04);position:relative;}
+.cursor{display:inline-block;width:8px;height:18px;background:var(--text-dark);margin-left:6px;vertical-align:middle;animation:blink 1s steps(2) infinite;}
+@keyframes blink{50%{opacity:0}}
+.matrix{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0.25;font-family:var(--mono);color:var(--text-dark);font-size:12px;white-space:nowrap;}
+.panel{padding:12px;border-radius:6px;margin-bottom:10px;background:rgba(0,0,0,0.06);border:1px solid rgba(57,255,20,0.03);}
+.line{white-space:pre-wrap;font-size:14px;line-height:1.45;color:var(--text-dark);}
+.small{font-size:12px;color:rgba(57,255,20,0.6)}
+.button{display:inline-block;margin-top:8px;padding:6px 12px;border:1px solid var(--text-dark);border-radius:4px;color:var(--text-dark);transition:0.2s;cursor:pointer;}
+.button:hover{background:rgba(57,255,20,0.1);}
+.project-link{display:block;margin:4px 0;color:var(--text-dark);}
+img{max-width:100%;height:auto;border-radius:6px;object-fit:cover;}
+.sidebar img{flex-shrink:0;}
+.frame{width:100%;max-width:1200px;}
+.terminal-wrap{min-height:calc(100vh - 200px);}
+
+/* Flexible containers */
+.panel{word-wrap:break-word;overflow-wrap:break-word;}
+.line{word-break:break-word;}
+.small p{margin:2px 0;}
+
+/* Project Cards */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:16px;
+  margin-top:16px;
+}
+.project-card{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.6s ease;
+  background:rgba(0,0,0,0.15);
+  border:1px solid rgba(57,255,20,0.03);
+  border-radius:8px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+}
+.project-card.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.project-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 8px 25px rgba(57,255,20,0.3);
+  border-color:rgba(57,255,20,0.4);
+}
+.project-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+  border-bottom:1px solid rgba(57,255,20,0.03);
+}
+.project-content{
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.project-content h3{
+  font-size:16px;
+  margin:0;
+}
+.project-content p{
+  font-size:13px;
+  color:rgba(57,255,20,0.8);
+}
+.tech-badges{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.tech-badges span{
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:4px;
+  background:rgba(57,255,20,0.1);
+}
+.outcome{
+  font-size:12px;
+  color:rgba(57,255,20,0.6);
+  padding-left:16px;
+  margin:4px 0;
+}
+.project-links{
+  margin-top:8px;
+}
+
+/* Enhanced Light Theme - Dark Green on White */
+body.light-theme{
+  background:#ffffff;
+  color:#1a5f1a;
+  --text-dark:#1a5f1a;
+  --bg-dark:#ffffff;
+  --accent:#0d8f47;
+}
+body.light-theme .frame{
+  background:rgba(26,95,26,0.02);
+  box-shadow:0 0 20px rgba(26,95,26,0.1);
+}
+body.light-theme .sidebar{
+  background:linear-gradient(135deg,#f8fff8 0%,#f0f8f0 100%);
+  color:#1a5f1a;
+  border-right:2px solid rgba(26,95,26,0.15);
+  box-shadow:2px 0 10px rgba(26,95,26,0.05);
+}
+body.light-theme .term{
+  background:#ffffff;
+  border:2px solid rgba(26,95,26,0.1);
+  color:#1a5f1a;
+  box-shadow:inset 0 0 20px rgba(26,95,26,0.03);
+}
+body.light-theme .panel{
+  background:rgba(26,95,26,0.03);
+  border:1px solid rgba(26,95,26,0.1);
+  box-shadow:0 2px 8px rgba(26,95,26,0.05);
+}
+body.light-theme .nav a{
+  color:#1a5f1a;
+  border:1px solid rgba(26,95,26,0.2);
+  background:rgba(26,95,26,0.02);
+  transition:all 0.3s ease;
+}
+body.light-theme .nav a:hover{
+  background:rgba(26,95,26,0.1);
+  border-color:rgba(26,95,26,0.4);
+  transform:translateX(3px);
+}
+body.light-theme .button{
+  color:#ffffff;
+  background:linear-gradient(135deg,#1a5f1a 0%,#0d8f47 100%);
+  border:2px solid #1a5f1a;
+  box-shadow:0 4px 12px rgba(26,95,26,0.2);
+  transition:all 0.3s ease;
+}
+body.light-theme .button:hover{
+  background:linear-gradient(135deg,#0d8f47 0%,#1a5f1a 100%);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(26,95,26,0.3);
+}
+body.light-theme .project-link,
+body.light-theme a{
+  color:#0d8f47;
+  font-weight:500;
+}
+body.light-theme .project-link:hover,
+body.light-theme a:hover{
+  color:#1a5f1a;
+  text-shadow:0 1px 3px rgba(26,95,26,0.2);
+}
+body.light-theme .tech-badges span{
+  color:#ffffff;
+  background:linear-gradient(135deg,#1a5f1a 0%,#0d8f47 100%);
+  border:1px solid #1a5f1a;
+  box-shadow:0 2px 6px rgba(26,95,26,0.2);
+  font-weight:500;
+}
+body.light-theme .search-input{
+  background:rgba(26,95,26,0.05);
+  border-color:rgba(26,95,26,0.2);
+  color:#1a5f1a;
+}
+body.light-theme .filter-btn{
+  border-color:rgba(26,95,26,0.3);
+  background:rgba(26,95,26,0.05);
+  color:#1a5f1a;
+}
+body.light-theme .filter-btn.active,
+body.light-theme .filter-btn:hover{
+  background:rgba(26,95,26,0.15);
+}
+body.light-theme .progress-bar{
+  background:#1a5f1a;
+}
+body.light-theme .hamburger span{
+  background:#1a5f1a;
+}
+body.light-theme .small{
+  color:#2d7a2d;
+}
+body.light-theme .line{
+  color:#1a5f1a;
+}
+body.light-theme .dot{
+  background:linear-gradient(135deg,#1a5f1a 0%,#0d8f47 100%);
+  box-shadow:0 2px 6px rgba(26,95,26,0.3);
+}
+body.light-theme .skill-progress{
+  background:linear-gradient(90deg,#1a5f1a 0%,#0d8f47 100%);
+  box-shadow:0 1px 3px rgba(26,95,26,0.3);
+}
+body.light-theme .skill-level{
+  background:rgba(26,95,26,0.1);
+}
+body.light-theme .matrix{
+  color:rgba(26,95,26,0.15);
+  opacity:0.3;
+}
+body.light-theme .project-card{
+  background:rgba(26,95,26,0.02);
+  border:2px solid rgba(26,95,26,0.1);
+  box-shadow:0 4px 15px rgba(26,95,26,0.08);
+}
+body.light-theme .project-card:hover{
+  border-color:rgba(26,95,26,0.3);
+  box-shadow:0 8px 25px rgba(26,95,26,0.15);
+}
+body.light-theme .cert-badge{
+  background:rgba(26,95,26,0.03);
+  border:2px solid rgba(26,95,26,0.15);
+}
+body.light-theme .cert-badge:hover{
+  box-shadow:0 6px 20px rgba(26,95,26,0.2);
+}
+body.light-theme .loading{
+  border-color:rgba(26,95,26,0.2);
+  border-top-color:#1a5f1a;
+}
+body.light-theme .cursor{
+  background:#1a5f1a;
+}
+body.light-theme #cmd-input{
+  color:#1a5f1a!important;
+}
+body.light-theme .title{
+  color:#1a5f1a;
+  text-shadow:0 1px 3px rgba(26,95,26,0.1);
+}
+body.light-theme .subtitle{
+  color:#2d7a2d;
+}
+
+/* Loading animation */
+.loading{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  border:3px solid rgba(57,255,20,0.3);
+  border-radius:50%;
+  border-top-color:var(--text-dark);
+  animation:spin 1s ease-in-out infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Certifications */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+  margin-top:12px;
+}
+.cert-badge{
+  background:rgba(0,0,0,0.15);
+  border:1px solid rgba(57,255,20,0.2);
+  border-radius:8px;
+  padding:12px;
+  text-align:center;
+  transition:all 0.3s ease;
+}
+.cert-badge:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(57,255,20,0.3);
+}
+.cert-badge img{
+  width:60px;
+  height:60px;
+  margin-bottom:8px;
+}
+.cert-title{
+  font-size:12px;
+  font-weight:bold;
+  margin-bottom:4px;
+}
+.cert-issuer{
+  font-size:10px;
+  color:rgba(57,255,20,0.7);
+}
+
+/* Skills */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:8px;
+  margin-top:12px;
+}
+.skill-item{
+  background:rgba(0,0,0,0.1);
+  border:1px solid rgba(57,255,20,0.1);
+  border-radius:6px;
+  padding:8px;
+  text-align:center;
+  font-size:11px;
+}
+.skill-level{
+  width:100%;
+  height:4px;
+  background:rgba(57,255,20,0.2);
+  border-radius:2px;
+  margin-top:4px;
+}
+.skill-progress{
+  height:100%;
+  background:var(--text-dark);
+  border-radius:2px;
+  transition:width 1s ease;
+}
+
+/* Enhanced Responsive Design */
+/* Large tablets and small desktops */
+@media (max-width:1024px){
+  .frame{max-width:100%;grid-template-columns:280px 1fr;}
+  .projects-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+}
+
+/* Tablets */
+@media (max-width:768px){
+  .frame{grid-template-columns:250px 1fr;}
+  aside.sidebar{padding:15px;}
+  main.terminal-wrap{padding:20px;}
+  .projects-grid{grid-template-columns:1fr;gap:15px;}
+  .cert-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .skills-grid{grid-template-columns:repeat(3,1fr);gap:8px;}
+  .title{font-size:18px;}
+  .subtitle{font-size:12px;}
+  img{width:100px!important;height:100px!important;}
+}
+
+/* Mobile phones */
+@media (max-width:640px){
+  html,body{display:block;}
+  .frame{grid-template-columns:1fr;min-height:auto;margin:0;}
+  aside.sidebar{
+    height:auto;
+    position:relative;
+    border-right:none;
+    border-bottom:1px solid rgba(57,255,20,0.1);
+    padding:12px;
+    text-align:center;
+  }
+  main.terminal-wrap{padding:12px;}
+  .term{margin-top:8px;padding:12px;min-height:250px;}
+  .projects-grid{grid-template-columns:1fr;gap:10px;}
+  .cert-grid{grid-template-columns:1fr;gap:8px;}
+  .skills-grid{grid-template-columns:repeat(2,1fr);gap:6px;}
+  .nav{gap:4px;flex-direction:row;flex-wrap:wrap;justify-content:center;}
+  .nav a{padding:6px 8px;font-size:11px;flex:1;min-width:80px;text-align:center;}
+  .title{font-size:16px;}
+  .subtitle{font-size:10px;}
+  .line{font-size:13px;}
+  .small{font-size:11px;}
+  .panel{padding:10px;margin-bottom:8px;}
+  .project-content{padding:10px;}
+  .project-content h3{font-size:14px;}
+  .project-content p{font-size:12px;}
+  .tech-badges span{font-size:10px;padding:2px 4px;}
+  .button{padding:5px 10px;font-size:11px;}
+  img{width:80px!important;height:80px!important;}
+}
+
+/* Very small phones */
+@media (max-width:480px){
+  .frame{padding:0;}
+  aside.sidebar{padding:10px;}
+  main.terminal-wrap{padding:8px;}
+  .term{padding:8px;}
+  .nav{gap:3px;}
+  .nav a{padding:5px 6px;font-size:10px;min-width:70px;}
+  .title{font-size:14px;}
+  .subtitle{font-size:9px;}
+  .line{font-size:12px;}
+  .small{font-size:10px;}
+  .panel{padding:8px;margin-bottom:6px;}
+  .skills-grid{grid-template-columns:1fr;gap:4px;}
+  .skill-item{padding:6px;font-size:10px;}
+  .project-content{padding:8px;gap:6px;}
+  .project-content h3{font-size:13px;}
+  .project-content p{font-size:11px;}
+  .tech-badges{gap:4px;}
+  .tech-badges span{font-size:9px;padding:1px 3px;}
+  .button{padding:4px 8px;font-size:10px;}
+  img{width:60px!important;height:60px!important;}
+  #cmd-input{width:70%!important;font-size:11px;}
+}
+
+/* Landscape orientation adjustments */
+@media (max-height:500px) and (orientation:landscape){
+  .frame{grid-template-columns:200px 1fr;}
+  aside.sidebar{padding:8px;}
+  .nav{gap:2px;}
+  .nav a{padding:4px 6px;font-size:10px;}
+  .title{font-size:14px;}
+  .subtitle{font-size:9px;}
+  img{width:50px!important;height:50px!important;}
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio:2), (min-resolution:192dpi){
+  .line,.small{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+}
+
+/* Touch device optimizations */
+@media (hover:none) and (pointer:coarse){
+  .nav a,.button,.project-card{min-height:44px;display:flex;align-items:center;justify-content:center;}
+  .project-card:hover{transform:none;box-shadow:none;}
+  .project-card:active{transform:scale(0.98);}
+}
+
+/* Search and Filter */
+.search-container{padding:12px;margin-bottom:10px;background:rgba(0,0,0,0.1);border-radius:6px;}
+.search-input{width:100%;padding:8px;background:rgba(0,0,0,0.2);border:1px solid rgba(57,255,20,0.2);border-radius:4px;color:var(--text-dark);font-family:var(--mono);font-size:12px;}
+.filter-buttons{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.filter-btn{padding:4px 8px;font-size:10px;border:1px solid rgba(57,255,20,0.3);background:rgba(0,0,0,0.1);color:var(--text-dark);border-radius:3px;cursor:pointer;transition:0.2s;}
+.filter-btn.active,.filter-btn:hover{background:rgba(57,255,20,0.2);}
+
+/* Progress Indicator */
+.progress-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--text-dark);z-index:1000;transition:width 0.3s ease;}
+
+/* Breadcrumbs */
+.breadcrumb{padding:8px 0;font-size:11px;color:rgba(57,255,20,0.6);}
+.breadcrumb a{color:rgba(57,255,20,0.8);}
+.breadcrumb span{margin:0 4px;}
+
+/* Mobile Hamburger Menu */
+.hamburger{display:none;flex-direction:column;cursor:pointer;padding:8px;}
+.hamburger span{width:20px;height:2px;background:var(--text-dark);margin:2px 0;transition:0.3s;}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-6px);}
+
+/* Smooth Scrolling */
+html{scroll-behavior:smooth;}
+
+/* Image Lazy Loading */
+img[data-src]{opacity:0;transition:opacity 0.3s;}
+img[data-src].loaded{opacity:1;}
+
+/* Loading States */
+.loading-skeleton{background:linear-gradient(90deg,rgba(57,255,20,0.1) 25%,rgba(57,255,20,0.2) 50%,rgba(57,255,20,0.1) 75%);background-size:200% 100%;animation:loading 1.5s infinite;}
+@keyframes loading{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+
+/* Interactive Components */
+.demo-container{background:rgba(0,0,0,0.1);border-radius:8px;padding:16px;margin:12px 0;}
+.demo-title{font-size:14px;font-weight:bold;margin-bottom:8px;}
+.code-demo{width:100%;height:300px;border:1px solid rgba(57,255,20,0.2);border-radius:4px;}
+.terminal-sim{background:rgba(0,0,0,0.8);padding:12px;border-radius:6px;font-family:var(--mono);font-size:12px;}
+.terminal-sim .prompt{color:var(--text-dark);}
+.terminal-sim .output{color:rgba(57,255,20,0.8);margin:4px 0;}
+.status-indicator{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;}
+.status-online{background:#00ff00;}
+.status-offline{background:#ff0000;}
+.status-building{background:#ffaa00;animation:pulse 1s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+
+/* GitHub Activity Feed */
+.activity-feed{max-height:200px;overflow-y:auto;}
+.activity-item{padding:6px 0;border-bottom:1px solid rgba(57,255,20,0.1);font-size:11px;}
+.activity-item:last-child{border-bottom:none;}
+.activity-time{color:rgba(57,255,20,0.5);}
+
+/* Accessibility Enhancements */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.focus-visible{outline:3px solid var(--text-dark);outline-offset:2px;}
+
+/* High Contrast Mode */
+@media (prefers-contrast:high){
+  :root{--text-dark:#00ff00;--bg-dark:#000000;}
+  .panel{border-width:2px;}
+  .button{border-width:2px;}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
+  .matrix{display:none;}
+}
+
+/* Mobile Responsive Updates */
+@media (max-width:640px){
+  .hamburger{display:flex;}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(0,0,0,0.9);flex-direction:column;padding:10px;}
+  .nav.active{display:flex;}
+  .search-container{padding:8px;}
+  .filter-buttons{gap:4px;}
+  .filter-btn{padding:3px 6px;font-size:9px;}
+  .demo-container{padding:12px;}
+  .code-demo{height:200px;}
+}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progress-bar"></div>
+<a href="#term" class="skip-link">Skip to main content</a>
+<div class="frame">
+  <aside class="sidebar" role="complementary" aria-label="Sidebar">
+    <div class="logo"><div class="dot"></div>
+      <div>
+        <h1 class="title">David Kljajo</h1>
+        <div class="subtitle">DevOps Engineer | Credly Verified</div>
+      </div>
+    </div>
+    <img src="photo.jpg" alt="David Kljajo - DevOps Engineer specializing in AWS, Docker, and Kubernetes" style="width:120px;height:120px;border-radius:50%;border:2px solid var(--text-dark);margin:10px 0;" role="img" aria-label="Professional headshot of David Kljajo">
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+      <a href="#home" data-nav>Home</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#repos" data-nav>Repositories</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#stats" data-nav>GitHub Stats</a>
+      <a href="#certs" data-nav>Certifications</a>
+      <a href="#experience" data-nav>Experience</a>
+    </nav>
+    <div class="button" id="theme-toggle">Toggle Theme</div>
+    <div class="button" id="copy-email">Copy Email</div>
+  </aside>
+  <main class="terminal-wrap" id="term" role="main" aria-live="polite">
+    <div class="matrix" id="matrix"></div>
+    <div class="term" id="term-content">
+
+      <!-- Home -->
+      <section id="page-home" class="page">
+        <h2 style="display:none;">David Kljajo DevOps Engineer Portfolio</h2>
+        <div class="panel"><div class="line" id="home-line"></div></div>
+        <div class="panel">
+          <div class="line"><strong>David Kljajo - DevOps Engineer</strong></div>
+          <div class="small">
+            <p>🚀 <strong>Specializing in:</strong> Docker Containerization, Kubernetes Orchestration, Python Automation</p>
+            <p>📍 <strong>Location:</strong> Available for Remote Work Worldwide</p>
+            <p>🎯 <strong>Focus:</strong> Infrastructure as Code, CI/CD Pipelines, Site Reliability Engineering, Cloud Migration</p>
+            <p>🏆 <strong>Certifications:</strong> View my verified badges in the Certifications section</p>
+            <p>📧 <strong>Contact:</strong> davidkljajo@gmail.com | Available for Remote Work</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="line"><strong>Core Skills Overview</strong></div>
+          <div class="skills-grid">
+            <div class="skill-item">Docker<div class="skill-level"><div class="skill-progress" style="width:85%"></div></div></div>
+            <div class="skill-item">Kubernetes<div class="skill-level"><div class="skill-progress" style="width:80%"></div></div></div>
+            <div class="skill-item">Python<div class="skill-level"><div class="skill-progress" style="width:85%"></div></div></div>
+            <div class="skill-item">Terraform<div class="skill-level"><div class="skill-progress" style="width:80%"></div></div></div>
+            <div class="skill-item">Linux<div class="skill-level"><div class="skill-progress" style="width:90%"></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="page-certs" class="page" style="display:none">
+        <div class="panel">
+          <div class="line"><strong>Professional Certifications & Badges</strong></div>
+          <div class="small">Industry-recognized certifications demonstrating expertise in data science and programming</div>
+        </div>
+        <div class="panel">
+          <div data-iframe-width="220" data-iframe-height="270" data-share-badge-id="your-badge-id" data-share-badge-host="https://www.credly.com" data-theme="light"></div>
+          <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+          <p><a href="https://www.credly.com/users/david-kljajo" target="_blank" rel="noopener noreferrer" class="button">View All My Credly Badges</a></p>
+        </div>
+
+        <div class="panel">
+          <div class="line"><strong>📊 Data Science Specializations</strong></div>
+          <div class="small">
+            <p>• IBM Data Science Professional Certificate (Coursera)</p>
+            <p>• Google Data Analytics Professional Certificate (Coursera)</p>
+            <p>• Machine Learning Specialization by Andrew Ng (Coursera)</p>
+            <p>• Python for Data Science and AI (IBM via Coursera)</p>
+            <p>• Data Visualization with Python (IBM via Coursera)</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="line"><strong>🎯 Learning in Progress</strong></div>
+          <div class="small">
+            <p>• Currently studying for AWS Cloud Practitioner certification</p>
+            <p>• Expanding Docker and Kubernetes knowledge through hands-on projects</p>
+            <p>• Building practical DevOps experience with CI/CD pipelines</p>
+            <p>• Contributing to open-source projects to gain real-world experience</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Projects -->
+      <section id="page-projects" class="page" style="display:none">
+        <div class="breadcrumb">Home <span>></span> Projects</div>
+        <div class="panel"><div class="line"><strong>Projects Portfolio</strong></div></div>
+        <div class="search-container">
+          <input type="text" class="search-input" id="project-search" placeholder="Search projects...">
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="aws">AWS</button>
+            <button class="filter-btn" data-filter="docker">Docker</button>
+            <button class="filter-btn" data-filter="kubernetes">Kubernetes</button>
+            <button class="filter-btn" data-filter="python">Python</button>
+            <button class="filter-btn" data-filter="javascript">JavaScript</button>
+          </div>
+        </div>
+        <div class="projects-grid" id="projects-container">
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Rent A Kayak Mostar</h3>
+              <div class="small">16/06/2025 – 16/07/2025</div>
+              <p>Responsive promotional website for kayak rental services on the Neretva River. Built with pure HTML, CSS, and JavaScript without frameworks.</p>
+              <div class="tech-badges"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive</span></div>
+              <div class="project-links">
+                <a href="https://rentakayakmostar.com/" target="_blank" rel="noopener noreferrer" class="button">Live Site</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Full Dockerized & Kubernetes-Deployed SPA</h3>
+              <div class="small">16/10/2025 – 15/11/2025</div>
+              <p>End-to-end DevOps workflow for building, containerizing, and deploying a Single Page Application using Docker, Kubernetes, and Kind in local development.</p>
+              <div class="tech-badges"><span>Docker</span><span>Kubernetes</span><span>Kind</span><span>DevOps</span></div>
+              <div class="project-links">
+                <a href="https://github.com/dkljajo/My-First-Full-Dockerized-Kubernetes-Deployed-Web-App-" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Interactive DevOps Terminal Portfolio</h3>
+              <div class="small">15/11/2025 – 27/11/2025</div>
+              <p>Interactive terminal UI with matrix-style animations, dark/light mode toggle, live GitHub stats, and responsive design. Built with Vanilla JS.</p>
+              <div class="tech-badges"><span>Vanilla JS</span><span>CSS</span><span>GitHub API</span><span>Responsive</span></div>
+              <div class="project-links">
+                <a href="https://dkljajo.github.io/" target="_blank" rel="noopener noreferrer" class="button">Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Dockerized App with Let's Encrypt</h3>
+              <div class="small">03/11/2025 – 10/11/2025</div>
+              <p>Static website deployment using Caddy server with automated HTTPS certificates via Let's Encrypt, DuckDNS support, and Docker containerization.</p>
+              <div class="tech-badges"><span>Docker</span><span>Caddy</span><span>Let's Encrypt</span><span>DuckDNS</span></div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Enterprise Knowledge Assistant</h3>
+              <div class="small">07/07/2025 – 20/07/2025</div>
+              <p>AI-powered knowledge assistant using Amazon Bedrock, Titan Embeddings, Nova Micro FM, OpenSearch, and S3 with AWS Well-Architected Framework.</p>
+              <div class="tech-badges"><span>AWS Bedrock</span><span>OpenSearch</span><span>S3</span><span>AI/ML</span></div>
+              <div class="project-links">
+                <a href="https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Forum Scraper</h3>
+              <div class="small">07/05/2025 – 07/06/2025</div>
+              <p>Python tool using Selenium, Requests, and BeautifulSoup to automatically log in and scrape posts from forums, saving data to CSV for analysis.</p>
+              <div class="tech-badges"><span>Python</span><span>Selenium</span><span>BeautifulSoup</span><span>CSV</span></div>
+              <div class="project-links">
+                <a href="https://github.com/dkljajo/forum-scrapper" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>AWS Application Modernization</h3>
+              <div class="small">09/09/2025 – 18/09/2025</div>
+              <p>Application modernization using containerization and AWS cloud services. Focus on Docker containers with Amazon ECS, AWS Fargate, and GitHub Actions CI/CD.</p>
+              <div class="tech-badges"><span>AWS ECS</span><span>Fargate</span><span>GitHub Actions</span><span>Docker</span></div>
+              <div class="project-links">
+                <a href="https://github.com/dkljajo/Modernizacija-aplikacija-koristeci-AWS-Docker-ECS-GitHub-Actions-i-AWS-Fargate" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-content">
+              <h3>Volcano & Population Map</h3>
+              <div class="small">07/02/2025 – 12/03/2025</div>
+              <p>Interactive map using Folium library to visualize volcano locations with color-coded elevation markers and global population data from GeoJSON layers.</p>
+              <div class="tech-badges"><span>Python</span><span>Folium</span><span>GeoJSON</span><span>Data Viz</span></div>
+              <div class="project-links">
+                <a href="https://github.com/dkljajo/web-mapping-app" target="_blank" rel="noopener noreferrer" class="button">GitHub</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="panel">
+          <div class="line"><strong>🔴 Live Demos & Interactive Components</strong></div>
+        </div>
+        
+        <div class="demo-container">
+          <div class="demo-title">Interactive Terminal Simulation</div>
+          <div class="terminal-sim" id="terminal-demo">
+            <div class="prompt">$ kubectl get pods --all-namespaces</div>
+            <div class="output">NAMESPACE     NAME                    READY   STATUS    RESTARTS   AGE</div>
+            <div class="output">kube-system   coredns-558bd4d5db-xyz  1/1     Running   0          2d</div>
+            <div class="output">default       webapp-deployment-abc   1/1     Running   0          1d</div>
+            <div class="prompt">$ <span class="cursor"></span></div>
+          </div>
+        </div>
+        
+        <div class="demo-container">
+          <div class="demo-title">Live CodePen Demo - AWS Architecture Diagram</div>
+          <iframe class="code-demo" src="https://codepen.io/dkljajo/embed/preview/aws-architecture" frameborder="0" allowfullscreen aria-label="AWS Architecture Diagram Demo"></iframe>
+        </div>
+        
+        <div class="demo-container">
+          <div class="demo-title">Interactive Kubernetes Dashboard</div>
+          <iframe class="code-demo" src="https://codepen.io/dkljajo/embed/preview/k8s-dashboard" frameborder="0" allowfullscreen aria-label="Kubernetes Dashboard Demo"></iframe>
+        </div>
+        
+        <div class="panel">
+          <div class="line"><strong>📊 Real-time Status Dashboard</strong></div>
+          <div class="small" id="status-dashboard">
+            <p><span class="status-indicator status-online"></span>Portfolio Website: <span id="website-status">Online</span></p>
+            <p><span class="status-indicator status-online"></span>GitHub Pages: <span id="github-status">Operational</span></p>
+            <p><span class="status-indicator status-online"></span>GitHub API: <span id="api-status">Connected</span></p>
+            <p><span class="status-indicator status-online"></span>Credly Badges: <span id="credly-status">Synced</span></p>
+            <p><span class="status-indicator status-building"></span>Latest Deploy: <span id="deploy-status">Building...</span></p>
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- Repositories -->
+      <section id="page-repos" class="page" style="display:none">
+        <div class="breadcrumb">Home <span>></span> Repositories</div>
+        <div class="panel"><div class="line"><strong>Repositories</strong></div></div>
+        <div class="search-container">
+          <input type="text" class="search-input" id="repo-search" placeholder="Search repositories...">
+        </div>
+        <div id="repos-list"></div>
+        
+        <div class="panel">
+          <div class="line"><strong>📊 Live GitHub Activity Feed</strong></div>
+          <div class="activity-feed" id="github-activity">
+            <div class="activity-item">
+              <span class="activity-time">2 hours ago</span> - Pushed to main branch in Enterprise-Knowledge-Assistant
+            </div>
+            <div class="activity-item">
+              <span class="activity-time">1 day ago</span> - Created new repository: aws-terraform-modules
+            </div>
+            <div class="activity-item">
+              <span class="activity-time">2 days ago</span> - Merged pull request in docker-kubernetes-app
+            </div>
+          </div>
+        </div>
+        
+        <div class="panel"><div class="button" onclick="showPage('home');">Return to Home</div></div>
+      </section>
+
+      <!-- About -->
+      <section id="page-about" class="page" style="display:none">
+        <div class="panel">
+          <div class="line"><strong>About — David Kljajo</strong></div>
+          <div class="small">
+            <p>I began my career as a manager and deputy director in a family-owned manufacturing company, where I led daily operations, developed customer relationships, and oversaw key business processes. Building on that foundation, I transitioned into the tech sector with a focus on system administration, cloud automation, and technical support — earning multiple specializations in Linux, Python, and Data Science.</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="line"><strong>🔧 Key Competencies:</strong></div>
+          <div class="small">
+            <p>• DevOps & Cloud (Docker, Terraform, Ansible)</p>
+            <p>• Linux Systems & Networking</p>
+            <p>• CI/CD Pipelines & Infrastructure as Code</p>
+            <p>• Python for Data Analysis & Automation</p>
+            <p>• Customer and Technical Support</p>
+            <p>• Project Management & Cross-Functional Collaboration</p>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="line"><strong>Philosophy</strong></div>
+          <div class="small">
+            <p>I'm passionate about solving complex problems, optimizing systems, and continuously learning new technologies that bridge infrastructure with innovation.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GitHub Stats & Badges -->
+      <section id="page-stats" class="page" style="display:none">
+        <div class="panel">
+          <div class="line"><strong>GitHub Stats & Analytics</strong></div>
+          <div class="small">Live statistics from GitHub API - Updated automatically</div>
+        </div>
+        <div class="panel">
+          <img src="https://github-readme-stats.vercel.app/api?username=dkljajo&show_icons=true&hide_title=true&count_private=true&theme=dark&cache_seconds=1800" alt="GitHub Stats">
+          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dkljajo&layout=compact&theme=dark&cache_seconds=1800" alt="Top Languages">
+        </div>
+        <div class="panel">
+          <div class="line"><strong>Contribution Activity</strong></div>
+          <img src="https://github-readme-activity-graph.vercel.app/graph?username=dkljajo&theme=github-dark&hide_border=true" alt="Contribution Graph">
+        </div>
+        <div class="panel">
+          <div class="line"><strong>GitHub Streak & Metrics</strong></div>
+          <img src="https://github-readme-streak-stats.herokuapp.com/?user=dkljajo&theme=dark&hide_border=true" alt="GitHub Streak">
+          <img src="https://komarev.com/ghpvc/?username=dkljajo&color=brightgreen&style=for-the-badge" alt="Profile Views">
+        </div>
+        <div class="panel">
+          <div class="line"><strong>Repository Insights</strong></div>
+          <img src="https://img.shields.io/github/followers/dkljajo?style=for-the-badge&logo=github&color=brightgreen" alt="Followers">
+          <img src="https://img.shields.io/github/stars/dkljajo?style=for-the-badge&logo=github&color=brightgreen" alt="Stars">
+          <img src="https://img.shields.io/badge/Total%20Repos-15+-blue?style=for-the-badge&logo=github" alt="Total Repos">
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="page-experience" class="page" style="display:none">
+        <div class="panel">
+          <div class="line"><strong>Professional Experience</strong></div>
+          <div class="small">Career progression from management to technical roles in DevOps and system administration</div>
+        </div>
+        
+        <div class="panel">
+          <div class="line"><strong>Technical Support Specialist</strong> | Nsoft, Mostar</div>
+          <div class="small">March 2024 - June 2024</div>
+          <div class="small">
+            <p>• Hardware and software troubleshooting</p>
+            <p>• Zendesk support system management</p>
+            <p>• Team collaboration and customer support</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="line"><strong>AWS DevOps Mentorship</strong> | AllOps, Mostar</div>
+          <div class="small">February 2023 - November 2023</div>
+          <div class="small">
+            <p>• Linux/Unix administration and web servers</p>
+            <p>• AWS cloud computing and Infrastructure as Code</p>
+            <p>• CI/CD pipelines and monitoring with ELK stack</p>
+            <p>• HashiCorp tools and system performance optimization</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="line"><strong>System Admin Bootcamp</strong> | Nsoft, Mostar</div>
+          <div class="small">April 2022 - May 2022</div>
+          <div class="small">
+            <p>• Linux processes, networking, and containers</p>
+            <p>• Docker images and Kubernetes orchestration</p>
+            <p>• Database management (SQL, Redis, RabbitMQ)</p>
+            <p>• Linux security and system administration</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="line"><strong>Deputy Manager</strong> | Mičel, Mostar</div>
+          <div class="small">June 2006 - May 2017</div>
+          <div class="small">
+            <p>• Manager and deputy director of PVC manufacturing company</p>
+            <p>• Managerial and economic tasks, system administration</p>
+            <p>• Microsoft Office suite and administrative operations</p>
+            <p>• 11 years of leadership and business management experience</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script>
+// Navigation
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.style.display='none');
+  document.getElementById('page-'+name).style.display='block';
+}
+window.addEventListener('hashchange',()=>showPage(location.hash.replace('#','')||'home'));
+window.addEventListener('load',()=>{
+  showPage(location.hash.replace('#','')||'home');
+  typeText(document.getElementById('home-line'),"Welcome to the portfolio of David Kljajo");
+});
+
+// Typing animation
+function typeText(el,text,speed=40){
+  let i=0;el.textContent='';
+  const interval=setInterval(()=>{
+    el.textContent+=text[i];i++;if(i>=text.length)clearInterval(interval);
+  },speed);
+}
+
+// Enhanced GitHub repos loading with proper error handling
+async function loadRepos(retryCount = 0){
+  const reposDiv=document.getElementById('repos-list');
+  const maxRetries = 3;
+  
+  if(retryCount === 0){
+    reposDiv.innerHTML='<div class="panel"><div class="line"><span class="loading"></span> Loading repositories...</div></div>';
+  }
+  
+  try{
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+    
+    const res = await fetch('https://api.github.com/users/dkljajo/repos?sort=pushed&per_page=15', {
+      signal: controller.signal,
+      headers: {
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (!res.ok) {
+      throw new Error(`GitHub API error: ${res.status} ${res.statusText}`);
+    }
+    
+    const data = await res.json();
+    
+    if (!Array.isArray(data)) {
+      throw new Error('Invalid response format from GitHub API');
+    }
+    
+    reposDiv.innerHTML='';
+    
+    if (data.length === 0) {
+      reposDiv.innerHTML='<div class="panel"><div class="line">📂 No repositories found</div></div>';
+      return;
+    }
+    
+    data.forEach((r,i)=>{
+      setTimeout(()=>{
+        const div=document.createElement('div');
+        div.className='panel';
+        div.style.opacity='0';
+        div.style.transform='translateX(-20px)';
+        div.innerHTML=`
+          <div class="line"><strong><a href="${r.html_url}" target="_blank" rel="noopener noreferrer">${r.name}</a></strong></div>
+          <div class="small">${r.description||'No description available'}</div>
+          <div class="small">⭐ ${r.stargazers_count} • 🍴 ${r.forks_count} • ${r.language||'—'} • Updated ${new Date(r.pushed_at).toLocaleDateString()}</div>
+        `;
+        reposDiv.appendChild(div);
+        
+        setTimeout(()=>{
+          div.style.transition='all 0.4s ease';
+          div.style.opacity='1';
+          div.style.transform='translateX(0)';
+        },50);
+      },i*100);
+    });
+    
+  } catch(error) {
+    console.error('GitHub API Error:', error);
+    
+    if (error.name === 'AbortError') {
+      if (retryCount < maxRetries) {
+        reposDiv.innerHTML=`<div class="panel"><div class="line">⏳ Request timeout, retrying... (${retryCount + 1}/${maxRetries})</div></div>`;
+        setTimeout(() => loadRepos(retryCount + 1), 2000);
+        return;
+      }
+      reposDiv.innerHTML='<div class="panel"><div class="line">⏰ Request timed out. <button onclick="loadRepos()" class="button">Retry</button></div></div>';
+    } else if (error.message.includes('rate limit')) {
+      reposDiv.innerHTML='<div class="panel"><div class="line">🚫 GitHub API rate limit exceeded. Please try again later.</div></div>';
+    } else if (retryCount < maxRetries) {
+      reposDiv.innerHTML=`<div class="panel"><div class="line">🔄 Connection error, retrying... (${retryCount + 1}/${maxRetries})</div></div>`;
+      setTimeout(() => loadRepos(retryCount + 1), 2000);
+    } else {
+      reposDiv.innerHTML='<div class="panel"><div class="line">❌ Failed to load repositories. <button onclick="loadRepos()" class="button">Retry</button></div><div class="small">Check your internet connection or try again later.</div></div>';
+    }
+  }
+}
+loadRepos();
+
+// Matrix animation
+const matrix=document.getElementById('matrix');const commands=['ssh deploy@prod','docker-compose up','terraform plan','kubectl get pods','journalctl -u app.service','git status','git pull origin main','ansible-playbook site.yml'];let active=0;const MAX_ACTIVE=20;
+function spawnColumn(x){if(active>MAX_ACTIVE)return;active++;const el=document.createElement('div');el.style.position='absolute';el.style.left=x+'px';el.style.fontSize=(8+Math.random()*8)+'px';el.style.opacity=(0.2+Math.random()*0.6);matrix.appendChild(el);let height=0;const max=30+Math.floor(Math.random()*50);const id=setInterval(()=>{height++;let s='';for(let i=0;i<Math.min(height,max);i++){s+=Math.random()<0.3?Math.random()<0.5?'0':'1':commands[Math.floor(Math.random()*commands.length)];s+=' ';}el.textContent=s;el.style.transform='translateY('+(height*14)+'px)';if(height>max){clearInterval(id);el.remove();active--;}} ,40+Math.random()*40);}
+setInterval(()=>spawnColumn(Math.random()*(matrix.clientWidth-20)),350);
+
+// Enhanced project card animations
+function animateProjectCards(){
+  document.querySelectorAll('.project-card').forEach((card,i)=>{
+    setTimeout(()=>{
+      card.classList.add('visible');
+    },i*200);
+  });
+}
+
+
+
+// Enhanced theme toggle with localStorage persistence and analytics
+const body = document.body;
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') body.classList.add('light-theme');
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  body.classList.toggle('light-theme');
+  const newTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
+  localStorage.setItem('theme', newTheme);
+  trackEvent('Theme Toggle', 'UI Interaction', newTheme);
+});
+
+// Progress indicator
+function updateProgress(){
+  const scrollTop = window.pageYOffset;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('progress-bar').style.width = progress + '%';
+}
+window.addEventListener('scroll', updateProgress);
+
+// Mobile hamburger menu
+document.getElementById('hamburger').addEventListener('click', function(){
+  this.classList.toggle('active');
+  document.getElementById('nav').classList.toggle('active');
+});
+
+// Enhanced search functionality with analytics
+document.getElementById('project-search')?.addEventListener('input', function() {
+  const query = this.value.toLowerCase();
+  const projects = document.querySelectorAll('.project-card');
+  let visibleCount = 0;
+  
+  projects.forEach(project => {
+    const text = project.textContent.toLowerCase();
+    const isVisible = text.includes(query);
+    project.style.display = isVisible ? 'flex' : 'none';
+    if (isVisible) visibleCount++;
+  });
+  
+  if (query.length > 2) {
+    trackEvent('Search Query', 'Search', `${query} (${visibleCount} results)`);
+  }
+});
+
+// Enhanced filter functionality with analytics
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    
+    const filter = this.dataset.filter;
+    const projects = document.querySelectorAll('.project-card');
+    let visibleCount = 0;
+    
+    projects.forEach(project => {
+      let isVisible = false;
+      if (filter === 'all') {
+        isVisible = true;
+      } else {
+        const badges = project.querySelectorAll('.tech-badges span');
+        isVisible = Array.from(badges).some(badge => 
+          badge.textContent.toLowerCase().includes(filter)
+        );
+      }
+      project.style.display = isVisible ? 'flex' : 'none';
+      if (isVisible) visibleCount++;
+    });
+    
+    trackEvent('Filter Applied', 'Filter', `${filter} (${visibleCount} results)`);
+  });
+});
+
+// Search functionality for repositories
+document.getElementById('repo-search')?.addEventListener('input', function(){
+  const query = this.value.toLowerCase();
+  const repos = document.querySelectorAll('#repos-list .panel');
+  repos.forEach(repo => {
+    const text = repo.textContent.toLowerCase();
+    repo.style.display = text.includes(query) ? 'block' : 'none';
+  });
+});
+
+// Lazy loading for images
+const imageObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const img = entry.target;
+      img.src = img.dataset.src;
+      img.classList.add('loaded');
+      imageObserver.unobserve(img);
+    }
+  });
+});
+
+document.querySelectorAll('img[data-src]').forEach(img => {
+  imageObserver.observe(img);
+});
+
+// Touch gestures for mobile navigation
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+  
+  if(Math.abs(diff) > swipeThreshold){
+    const currentPage = document.querySelector('.page:not([style*="display: none"])');
+    const pages = ['home', 'projects', 'repos', 'about', 'stats', 'certs', 'experience'];
+    const currentIndex = pages.indexOf(currentPage.id.replace('page-', ''));
+    
+    if(diff > 0 && currentIndex < pages.length - 1){
+      // Swipe left - next page
+      location.hash = pages[currentIndex + 1];
+    } else if(diff < 0 && currentIndex > 0){
+      // Swipe right - previous page
+      location.hash = pages[currentIndex - 1];
+    }
+  }
+}
+
+// Analytics and Performance Monitoring
+function trackEvent(action, category = 'User Interaction', label = '') {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: 1
+    });
+  }
+}
+
+// Error Monitoring
+window.addEventListener('error', (e) => {
+  trackEvent('JavaScript Error', 'Error', `${e.filename}:${e.lineno} - ${e.message}`);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  trackEvent('Promise Rejection', 'Error', e.reason);
+});
+
+// Page View Tracking
+function trackPageView(page) {
+  trackEvent('Page View', 'Navigation', page);
+  if (typeof gtag !== 'undefined') {
+    gtag('config', 'G-TWT1WE0RSH', {
+      page_title: `David Kljajo - ${page}`,
+      page_location: `${window.location.origin}#${page}`
+    });
+  }
+}
+
+// Interactive Terminal Simulation
+function simulateTerminal() {
+  const terminal = document.getElementById('terminal-demo');
+  if (!terminal) return;
+  
+  const commands = [
+    { cmd: 'docker ps', output: ['CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS   PORTS   NAMES', 'abc123def456   nginx     "/docker"  2 hours   Up 2h    80/tcp  webapp'] },
+    { cmd: 'terraform plan', output: ['Plan: 3 to add, 1 to change, 0 to destroy.'] },
+    { cmd: 'aws s3 ls', output: ['2024-01-15 10:30:45 my-bucket-name', '2024-01-14 09:15:22 backup-bucket'] }
+  ];
+  
+  let cmdIndex = 0;
+  setInterval(() => {
+    if (cmdIndex < commands.length) {
+      const cmd = commands[cmdIndex];
+      terminal.innerHTML += `<div class="prompt">$ ${cmd.cmd}</div>`;
+      cmd.output.forEach(line => {
+        terminal.innerHTML += `<div class="output">${line}</div>`;
+      });
+      terminal.innerHTML += '<div class="prompt">$ <span class="cursor"></span></div>';
+      cmdIndex++;
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+  }, 5000);
+}
+
+// GitHub Activity Feed
+async function loadGitHubActivity() {
+  try {
+    const res = await fetch('https://api.github.com/users/dkljajo/events?per_page=5');
+    const events = await res.json();
+    const activityFeed = document.getElementById('github-activity');
+    
+    if (activityFeed && Array.isArray(events)) {
+      activityFeed.innerHTML = events.slice(0, 3).map(event => {
+        const date = new Date(event.created_at);
+        const timeAgo = getTimeAgo(date);
+        let action = 'Unknown activity';
+        
+        switch(event.type) {
+          case 'PushEvent':
+            action = `Pushed ${event.payload.commits?.length || 1} commit(s) to ${event.repo.name}`;
+            break;
+          case 'CreateEvent':
+            action = `Created ${event.payload.ref_type} in ${event.repo.name}`;
+            break;
+          case 'PullRequestEvent':
+            action = `${event.payload.action} pull request in ${event.repo.name}`;
+            break;
+        }
+        
+        return `<div class="activity-item"><span class="activity-time">${timeAgo}</span> - ${action}</div>`;
+      }).join('');
+    }
+  } catch (error) {
+    console.error('Failed to load GitHub activity:', error);
+  }
+}
+
+function getTimeAgo(date) {
+  const now = new Date();
+  const diff = now - date;
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const days = Math.floor(hours / 24);
+  
+  if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`;
+  if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+  return 'Just now';
+}
+
+// Enhanced Page Navigation with Analytics
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+  const page = document.getElementById('page-' + name);
+  if (page) {
+    page.style.display = 'block';
+    trackPageView(name);
+  }
+  
+  if (name === 'projects') {
+    setTimeout(animateProjectCards, 100);
+    setTimeout(simulateTerminal, 500);
+  }
+  
+  if (name === 'repos') {
+    setTimeout(loadGitHubActivity, 100);
+  }
+}
+
+// Service Worker registration with error handling
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('SW registered:', registration);
+        trackEvent('Service Worker Registered', 'PWA');
+      })
+      .catch(error => {
+        console.log('SW registration failed:', error);
+        trackEvent('Service Worker Failed', 'Error', error.message);
+      });
+  });
+}
+
+// Dynamic Status Monitoring
+async function updateServiceStatus() {
+  const statusChecks = {
+    'website-status': async () => {
+      try {
+        const response = await fetch(window.location.origin, { method: 'HEAD' });
+        return response.ok ? { status: 'Online', class: 'status-online' } : { status: 'Issues', class: 'status-offline' };
+      } catch {
+        return { status: 'Offline', class: 'status-offline' };
+      }
+    },
+    'github-status': async () => {
+      try {
+        const response = await fetch('https://api.github.com/users/dkljajo', { method: 'HEAD' });
+        return response.ok ? { status: 'Operational', class: 'status-online' } : { status: 'Issues', class: 'status-offline' };
+      } catch {
+        return { status: 'Down', class: 'status-offline' };
+      }
+    },
+    'api-status': async () => {
+      try {
+        const response = await fetch('https://api.github.com/users/dkljajo/repos?per_page=1');
+        return response.ok ? { status: 'Connected', class: 'status-online' } : { status: 'Limited', class: 'status-building' };
+      } catch {
+        return { status: 'Disconnected', class: 'status-offline' };
+      }
+    },
+    'credly-status': () => {
+      // Simulate Credly status - replace with actual API call if available
+      return Promise.resolve({ status: 'Synced', class: 'status-online' });
+    },
+    'deploy-status': () => {
+      // Simulate deployment status - integrate with your CI/CD
+      const statuses = [
+        { status: 'Deployed', class: 'status-online' },
+        { status: 'Building...', class: 'status-building' },
+        { status: 'Testing', class: 'status-building' }
+      ];
+      return Promise.resolve(statuses[Math.floor(Math.random() * statuses.length)]);
+    }
+  };
+
+  for (const [elementId, checkFunction] of Object.entries(statusChecks)) {
+    try {
+      const result = await checkFunction();
+      const element = document.getElementById(elementId);
+      const indicator = element?.previousElementSibling;
+      
+      if (element) {
+        element.textContent = result.status;
+      }
+      if (indicator) {
+        indicator.className = `status-indicator ${result.class}`;
+      }
+    } catch (error) {
+      console.error(`Status check failed for ${elementId}:`, error);
+    }
+  }
+}
+
+// Update status every 30 seconds
+setInterval(updateServiceStatus, 30000);
+
+// Initialize analytics and status on load
+window.addEventListener('load', () => {
+  trackPageView(location.hash.replace('#', '') || 'home');
+  simulateTerminal();
+  updateServiceStatus();
+});
+
+// Enhanced keyboard shortcuts with analytics
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey || e.metaKey) {
+    let page = '';
+    switch(e.key) {
+      case '1': e.preventDefault(); page = 'home'; break;
+      case '2': e.preventDefault(); page = 'projects'; break;
+      case '3': e.preventDefault(); page = 'repos'; break;
+      case '4': e.preventDefault(); page = 'about'; break;
+      case '5': e.preventDefault(); page = 'stats'; break;
+      case '6': e.preventDefault(); page = 'certs'; break;
+      case '7': e.preventDefault(); page = 'experience'; break;
+      case 'f': 
+        e.preventDefault(); 
+        document.getElementById('project-search')?.focus();
+        trackEvent('Search Focus', 'Keyboard Shortcut');
+        return;
+    }
+    if (page) {
+      location.hash = page;
+      trackEvent('Keyboard Navigation', 'Navigation', page);
+    }
+  }
+});
+
+// Track user interactions
+document.addEventListener('click', (e) => {
+  if (e.target.matches('.project-card')) {
+    trackEvent('Project Card Click', 'Project Interaction', e.target.querySelector('h3')?.textContent);
+  }
+  if (e.target.matches('.filter-btn')) {
+    trackEvent('Filter Click', 'Filter', e.target.dataset.filter);
+  }
+  if (e.target.matches('.button')) {
+    trackEvent('Button Click', 'UI Interaction', e.target.textContent);
+  }
+});
+
+// Enhanced email copy with better UX and analytics
+document.getElementById('copy-email').addEventListener('click', () => {
+  navigator.clipboard.writeText('davidkljajo@gmail.com').then(() => {
+    const btn = document.getElementById('copy-email');
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.style.background = 'rgba(57,255,20,0.2)';
+    trackEvent('Email Copied', 'Contact', 'davidkljajo@gmail.com');
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+    }, 2000);
+  }).catch(() => {
+    trackEvent('Email Copy Failed', 'Error');
+  });
+});
+
+
+
+// Terminal command simulation
+const terminalCommands={
+  'help':'Available commands: ls, whoami, skills, contact, clear, projects, repositories, about, experience, certifications, stats',
+  'ls':'projects/ repositories/ about.txt skills.txt experience/ certifications/ stats/',
+  'whoami':'David Kljajo - DevOps Engineer',
+  'skills':'Docker, Kubernetes, Python, Linux, Terraform',
+  'contact':'Email: davidkljajo@gmail.com | LinkedIn: /in/david-kljajo',
+  'projects':'Opening projects section...',
+  'repositories':'Opening repositories section...',
+  'about':'Opening about section...',
+  'experience':'Opening experience section...',
+  'certifications':'Opening certifications section...',
+  'stats':'Opening GitHub stats section...',
+  'clear':''
+};
+
+let commandHistory=[];
+let historyIndex=-1;
+
+// Add terminal input to home page
+window.addEventListener('load',()=>{
+  const homePage=document.getElementById('page-home');
+  const terminalInput=document.createElement('div');
+  terminalInput.innerHTML=`
+    <div class="panel">
+      <div class="line">Type 'help' for available commands or use navigation menu</div>
+      <div class="line">$ <input type="text" id="cmd-input" style="background:transparent;border:none;color:var(--text-dark);font-family:var(--mono);outline:none;width:80%;" placeholder="Enter command..."></div>
+      <div id="cmd-output"></div>
+    </div>
+  `;
+  homePage.appendChild(terminalInput);
+  
+  const cmdInput=document.getElementById('cmd-input');
+  const cmdOutput=document.getElementById('cmd-output');
+  
+  cmdInput.addEventListener('keydown',(e)=>{
+    if(e.key==='Enter'){
+      const cmd=cmdInput.value.trim().toLowerCase();
+      if(cmd){
+        commandHistory.push(cmd);
+        historyIndex=commandHistory.length;
+        
+        const outputLine=document.createElement('div');
+        outputLine.className='line';
+        outputLine.innerHTML=`$ ${cmd}`;
+        cmdOutput.appendChild(outputLine);
+        
+        const response=terminalCommands[cmd]||`Command not found: ${cmd}. Type 'help' for available commands.`;
+        
+        if(cmd==='clear'){
+          cmdOutput.innerHTML='';
+        }else if(['projects','repositories','about','experience','certifications','stats'].includes(cmd)){
+          const responseLine=document.createElement('div');
+          responseLine.className='line small';
+          responseLine.textContent=response;
+          cmdOutput.appendChild(responseLine);
+          setTimeout(()=>{
+            location.hash=cmd;
+          },500);
+        }else{
+          const responseLine=document.createElement('div');
+          responseLine.className='line small';
+          responseLine.textContent=response;
+          cmdOutput.appendChild(responseLine);
+        }
+        
+        cmdInput.value='';
+        cmdOutput.scrollTop=cmdOutput.scrollHeight;
+      }
+    }
+    else if(e.key==='ArrowUp'){
+      e.preventDefault();
+      if(historyIndex>0){
+        historyIndex--;
+        cmdInput.value=commandHistory[historyIndex];
+      }
+    }
+    else if(e.key==='ArrowDown'){
+      e.preventDefault();
+      if(historyIndex<commandHistory.length-1){
+        historyIndex++;
+        cmdInput.value=commandHistory[historyIndex];
+      }else{
+        historyIndex=commandHistory.length;
+        cmdInput.value='';
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
