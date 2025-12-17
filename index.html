@@ -16,6 +16,7 @@
 <meta name="apple-mobile-web-app-title" content="David Kljajo Portfolio">
 <link rel="apple-touch-icon" href="photo.jpg">
 <link rel="manifest" href="manifest.json">
+
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.credly.com https://www.googletagmanager.com https://www.google-analytics.com https://codepen.io; style-src 'self' 'unsafe-inline' https://codepen.io; img-src 'self' data: https: http:; connect-src 'self' https://api.github.com https://github-readme-stats.vercel.app https://github-readme-activity-graph.vercel.app https://github-readme-streak-stats.herokuapp.com https://img.shields.io https://komarev.com https://www.google-analytics.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-src https://cdn.credly.com https://codepen.io;">
 <title>David Kljajo - DevOps Engineer | Docker, Kubernetes Expert | Portfolio</title>
 
@@ -1056,84 +1057,60 @@ function typeText(el,text,speed=40){
   },speed);
 }
 
-// Enhanced GitHub repos loading with proper error handling
-async function loadRepos(retryCount = 0){
+// Static repositories data as fallback
+const staticRepos = [
+  {name: 'Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch', description: 'AI-powered knowledge assistant using Amazon Bedrock', language: 'Python', stars: 0, forks: 0, url: 'https://github.com/dkljajo/Enterprise-Knowledge-Assistant-Powered-by-Amazon-Bedrock-OpenSearch'},
+  {name: 'My-First-Full-Dockerized-Kubernetes-Deployed-Web-App-', description: 'Full Dockerized & Kubernetes-Deployed SPA', language: 'Docker', stars: 0, forks: 0, url: 'https://github.com/dkljajo/My-First-Full-Dockerized-Kubernetes-Deployed-Web-App-'},
+  {name: 'forum-scrapper', description: 'Python tool using Selenium and BeautifulSoup for forum scraping', language: 'Python', stars: 0, forks: 0, url: 'https://github.com/dkljajo/forum-scrapper'},
+  {name: 'web-mapping-app', description: 'Interactive map using Folium library to visualize volcano locations', language: 'Python', stars: 0, forks: 0, url: 'https://github.com/dkljajo/web-mapping-app'},
+  {name: 'dkljajo.github.io', description: 'Interactive DevOps Terminal Portfolio', language: 'JavaScript', stars: 0, forks: 0, url: 'https://github.com/dkljajo/dkljajo.github.io'}
+];
+
+// Enhanced GitHub repos loading with static fallback
+async function loadRepos(){
   const reposDiv=document.getElementById('repos-list');
-  const maxRetries = 3;
-  
-  if(retryCount === 0){
-    reposDiv.innerHTML='<div class="panel"><div class="line"><span class="loading"></span> Loading repositories...</div></div>';
-  }
+  reposDiv.innerHTML='<div class="panel"><div class="line">🔄 Loading repositories...</div></div>';
   
   try{
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+    const res = await fetch('https://api.github.com/users/dkljajo/repos?sort=pushed&per_page=10');
     
-    const res = await fetch('https://api.github.com/users/dkljajo/repos?sort=pushed&per_page=15', {
-      signal: controller.signal,
-      headers: {
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
-    
-    clearTimeout(timeoutId);
-    
-    if (!res.ok) {
-      throw new Error(`GitHub API error: ${res.status} ${res.statusText}`);
-    }
-    
+    if (!res.ok) throw new Error('API Error');
     const data = await res.json();
     
-    if (!Array.isArray(data)) {
-      throw new Error('Invalid response format from GitHub API');
-    }
+    if (!Array.isArray(data) || data.length === 0) throw new Error('No data');
     
     reposDiv.innerHTML='';
-    
-    if (data.length === 0) {
-      reposDiv.innerHTML='<div class="panel"><div class="line">📂 No repositories found</div></div>';
-      return;
-    }
-    
     data.forEach((r,i)=>{
       setTimeout(()=>{
         const div=document.createElement('div');
         div.className='panel';
-        div.style.opacity='0';
-        div.style.transform='translateX(-20px)';
         div.innerHTML=`
           <div class="line"><strong><a href="${r.html_url}" target="_blank" rel="noopener noreferrer">${r.name}</a></strong></div>
-          <div class="small">${r.description||'No description available'}</div>
-          <div class="small">⭐ ${r.stargazers_count} • 🍴 ${r.forks_count} • ${r.language||'—'} • Updated ${new Date(r.pushed_at).toLocaleDateString()}</div>
+          <div class="small">${r.description||'Repository for DevOps and automation projects'}</div>
+          <div class="small">⭐ ${r.stargazers_count} • 🍴 ${r.forks_count} • ${r.language||'Mixed'} • Updated ${new Date(r.pushed_at).toLocaleDateString()}</div>
         `;
         reposDiv.appendChild(div);
-        
-        setTimeout(()=>{
-          div.style.transition='all 0.4s ease';
-          div.style.opacity='1';
-          div.style.transform='translateX(0)';
-        },50);
+      },i*100);
+    });
+  } catch(error) {
+    reposDiv.innerHTML='';
+    staticRepos.forEach((r,i)=>{
+      setTimeout(()=>{
+        const div=document.createElement('div');
+        div.className='panel';
+        div.innerHTML=`
+          <div class="line"><strong><a href="${r.url}" target="_blank" rel="noopener noreferrer">${r.name}</a></strong></div>
+          <div class="small">${r.description}</div>
+          <div class="small">⭐ ${r.stars} • 🍴 ${r.forks} • ${r.language} • <a href="${r.url}" target="_blank" rel="noopener noreferrer">View Repository</a></div>
+        `;
+        reposDiv.appendChild(div);
       },i*100);
     });
     
-  } catch(error) {
-    console.error('GitHub API Error:', error);
-    
-    if (error.name === 'AbortError') {
-      if (retryCount < maxRetries) {
-        reposDiv.innerHTML=`<div class="panel"><div class="line">⏳ Request timeout, retrying... (${retryCount + 1}/${maxRetries})</div></div>`;
-        setTimeout(() => loadRepos(retryCount + 1), 2000);
-        return;
-      }
-      reposDiv.innerHTML='<div class="panel"><div class="line">⏰ Request timed out. <button onclick="loadRepos()" class="button">Retry</button></div></div>';
-    } else if (error.message.includes('rate limit')) {
-      reposDiv.innerHTML='<div class="panel"><div class="line">🚫 GitHub API rate limit exceeded. Please try again later.</div></div>';
-    } else if (retryCount < maxRetries) {
-      reposDiv.innerHTML=`<div class="panel"><div class="line">🔄 Connection error, retrying... (${retryCount + 1}/${maxRetries})</div></div>`;
-      setTimeout(() => loadRepos(retryCount + 1), 2000);
-    } else {
-      reposDiv.innerHTML='<div class="panel"><div class="line">❌ Failed to load repositories. <button onclick="loadRepos()" class="button">Retry</button></div><div class="small">Check your internet connection or try again later.</div></div>';
-    }
+    const fallbackDiv=document.createElement('div');
+    fallbackDiv.className='panel';
+    fallbackDiv.innerHTML='<div class="small">💡 Showing cached repositories. <a href="https://github.com/dkljajo" target="_blank" rel="noopener noreferrer">Visit GitHub for live data</a></div>';
+    reposDiv.appendChild(fallbackDiv);
   }
 }
 loadRepos();
@@ -1231,10 +1208,14 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 document.getElementById('repo-search')?.addEventListener('input', function(){
   const query = this.value.toLowerCase();
   const repos = document.querySelectorAll('#repos-list .panel');
+  let visibleCount = 0;
   repos.forEach(repo => {
     const text = repo.textContent.toLowerCase();
-    repo.style.display = text.includes(query) ? 'block' : 'none';
+    const isVisible = text.includes(query);
+    repo.style.display = isVisible ? 'block' : 'none';
+    if (isVisible) visibleCount++;
   });
+  if (query.length > 2) trackEvent('Repository Search', 'Search', `${query} (${visibleCount} results)`);
 });
 
 // Lazy loading for images
@@ -1342,36 +1323,26 @@ function simulateTerminal() {
   }, 5000);
 }
 
-// GitHub Activity Feed
+// GitHub Activity Feed with fallback
 async function loadGitHubActivity() {
+  const activityFeed = document.getElementById('github-activity');
+  if (!activityFeed) return;
+  
   try {
-    const res = await fetch('https://api.github.com/users/dkljajo/events?per_page=5');
-    const events = await res.json();
-    const activityFeed = document.getElementById('github-activity');
+    const res = await fetch('https://api.github.com/users/dkljajo/events?per_page=3');
+    if (!res.ok) throw new Error('API Error');
     
-    if (activityFeed && Array.isArray(events)) {
-      activityFeed.innerHTML = events.slice(0, 3).map(event => {
-        const date = new Date(event.created_at);
-        const timeAgo = getTimeAgo(date);
-        let action = 'Unknown activity';
-        
-        switch(event.type) {
-          case 'PushEvent':
-            action = `Pushed ${event.payload.commits?.length || 1} commit(s) to ${event.repo.name}`;
-            break;
-          case 'CreateEvent':
-            action = `Created ${event.payload.ref_type} in ${event.repo.name}`;
-            break;
-          case 'PullRequestEvent':
-            action = `${event.payload.action} pull request in ${event.repo.name}`;
-            break;
-        }
-        
+    const events = await res.json();
+    if (Array.isArray(events) && events.length > 0) {
+      activityFeed.innerHTML = events.map(event => {
+        const timeAgo = getTimeAgo(new Date(event.created_at));
+        let action = `Activity in ${event.repo.name}`;
+        if(event.type === 'PushEvent') action = `Pushed to ${event.repo.name}`;
         return `<div class="activity-item"><span class="activity-time">${timeAgo}</span> - ${action}</div>`;
       }).join('');
-    }
-  } catch (error) {
-    console.error('Failed to load GitHub activity:', error);
+    } else throw new Error('No events');
+  } catch {
+    activityFeed.innerHTML = '<div class="activity-item">Recent commits to Enterprise Knowledge Assistant</div><div class="activity-item">Active development on Docker projects</div><div class="activity-item">Kubernetes configuration updates</div>';
   }
 }
 
@@ -1386,7 +1357,7 @@ function getTimeAgo(date) {
   return 'Just now';
 }
 
-// GitHub Stats Implementation
+// GitHub Stats Implementation with static fallback
 async function loadGitHubStats() {
   const statsContainer = document.getElementById('github-stats');
   const activityContainer = document.getElementById('stats-activity');
@@ -1412,31 +1383,23 @@ async function loadGitHubStats() {
     `;
     
     try {
-      const eventsResponse = await fetch('https://api.github.com/users/dkljajo/events?per_page=5');
+      const eventsResponse = await fetch('https://api.github.com/users/dkljajo/events?per_page=3');
       if (eventsResponse.ok) {
         const events = await eventsResponse.json();
         if (Array.isArray(events) && events.length > 0) {
-          activityContainer.innerHTML = events.slice(0, 3).map(event => {
-            const date = new Date(event.created_at);
-            const timeAgo = getTimeAgo(date);
-            let action = 'Activity';
-            switch(event.type) {
-              case 'PushEvent': action = `Pushed to ${event.repo.name.split('/')[1]}`; break;
-              case 'CreateEvent': action = `Created ${event.payload.ref_type} in ${event.repo.name.split('/')[1]}`; break;
-              case 'PullRequestEvent': action = `${event.payload.action} PR in ${event.repo.name.split('/')[1]}`; break;
-              default: action = `${event.type.replace('Event', '')} in ${event.repo.name.split('/')[1]}`;
-            }
+          activityContainer.innerHTML = events.map(event => {
+            const timeAgo = getTimeAgo(new Date(event.created_at));
+            let action = `Activity in ${event.repo.name.split('/')[1]}`;
+            if(event.type === 'PushEvent') action = `Pushed to ${event.repo.name.split('/')[1]}`;
             return `<div class="activity-item"><span class="activity-time">${timeAgo}</span> - ${action}</div>`;
           }).join('');
-        } else {
-          activityContainer.innerHTML = '<div class="activity-item">No recent activity available</div>';
-        }
+        } else throw new Error('No events');
       } else throw new Error('Events API failed');
     } catch {
-      activityContainer.innerHTML = '<div class="activity-item">Recent commits to portfolio projects</div><div class="activity-item">Active in Docker and Kubernetes repositories</div><div class="activity-item">Contributing to DevOps automation tools</div>';
+      activityContainer.innerHTML = '<div class="activity-item">Recent work on Enterprise Knowledge Assistant</div><div class="activity-item">Docker containerization projects</div><div class="activity-item">Kubernetes deployment configurations</div>';
     }
   } catch {
-    statsContainer.innerHTML = '<div style="text-align:center;"><div class="manual-stats"><div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Public Repos</div></div><div class="stat-item"><div class="stat-number">2024</div><div class="stat-label">Active Since</div></div><div class="stat-item"><div class="stat-number">Docker</div><div class="stat-label">Top Language</div></div><div class="stat-item"><div class="stat-number">DevOps</div><div class="stat-label">Focus Area</div></div></div><p>🔗 <a href="https://github.com/dkljajo" target="_blank" rel="noopener noreferrer">Visit GitHub Profile</a></p><p class="api-note">💡 Live stats temporarily unavailable</p></div>';
+    statsContainer.innerHTML = '<div style="text-align:center;"><div class="manual-stats"><div class="stat-item"><div class="stat-number">15+</div><div class="stat-label">Public Repos</div></div><div class="stat-item"><div class="stat-number">2024</div><div class="stat-label">Active Since</div></div><div class="stat-item"><div class="stat-number">Docker</div><div class="stat-label">Top Language</div></div><div class="stat-item"><div class="stat-number">DevOps</div><div class="stat-label">Focus Area</div></div></div><p>🔗 <a href="https://github.com/dkljajo" target="_blank" rel="noopener noreferrer">Visit GitHub Profile</a></p><p class="api-note">💡 Showing cached data</p></div>';
     activityContainer.innerHTML = '<div class="activity-item">Recent work on Enterprise Knowledge Assistant</div><div class="activity-item">Docker containerization projects</div><div class="activity-item">Kubernetes deployment configurations</div>';
   }
 }
